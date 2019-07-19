@@ -11,12 +11,19 @@ namespace AppBancaEnLineaWeb
         {
             InitializeComponent();
 
+            /*
+             * FIXME: 
+             *      1. Crear la vista LoginPage. 
+             *      2. Una ves creada LoginPage, eliminar la siguiente linea (19). 
+             */
             MainPage = new MainPage();
+            //Una ves hecho lo anterior eliminar MainPage del proyecto.
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            //FIXME: Habilitar cuando este creada la vista LoginPage().
+            //MainPage = new LoginPage();
         }
 
         protected override void OnSleep()
@@ -26,7 +33,8 @@ namespace AppBancaEnLineaWeb
 
         protected override void OnResume()
         {
-            // Handle when your app resumes
+            //FIXME: Habilitar cuando este creada la vista TestPage() en la carpeta Views.
+            //MainPage = new Views.TestPage();
         }
     }
 }
