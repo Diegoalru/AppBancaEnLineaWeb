@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppBancaEnLineaWeb.LoginPage" 
+             BackgroundImage="JCH.jpg" >
+    <ContentPage.Content >
+        <ScrollView>
+            <StackLayout Orientation="Vertical" 
+                         HorizontalOptions="Fill" 
+                         VerticalOptions="Center" 
+                         Padding="50" AnchorY="50">
+                <Label Text="Bienvenido a Banco ULACIT" 
+					   Margin="0, -50, 0, 50"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Center"
+					   TextColor="White" 
+					   FontSize="25" 
+					   FontAttributes="Bold" ></Label>
+                <Entry x:Name="Txt_Username" 
+					   HorizontalTextAlignment="Center"
+                       Placeholder="Usuario"
+                       HorizontalOptions="Fill"
+					   PlaceholderColor="#CFC9C9"
+					   TextColor="#C5C2C2" ></Entry>
+                <Entry x:Name="Txt_Password" 
+                       IsPassword="True"
+					   HorizontalTextAlignment="Center"
+                       Placeholder="Contraseña" 
+					   Margin="0, 0, 0, 25"
+                       HorizontalOptions="Fill"
+					   PlaceholderColor="#CFC9C9"
+					   TextColor="#C5C2C2" ></Entry>
+                <Button x:Name="Btn_Login" 
+                        Text="Iniciar Sesion" 
+						Margin="30, 0"
+                        BorderColor="#252525" 
+						BackgroundColor="#FFFFFF" 
+                        TextColor="Green"
+						CornerRadius="40" 
+                        Clicked="Btn_Login_Clicked" FontAttributes="Bold"></Button>
+                <Button x:Name="Btn_Register" 
+                        Text="¿No tiene una Cuenta?" 
+                        TextColor="White"
+						BorderColor="Transparent"
+						BackgroundColor="Transparent"
+                        CornerRadius="10" 
+                        Clicked="Btn_Register_Clicked" FontAttributes="Bold"></Button>
+                <!--<Button x:Name="Btn_Agregar" 
+                        Text="Agregar Usuario" 
+                        BorderColor="Navy" 
+                        BackgroundColor="Navy" 
+                        TextColor="Silver"
+                        CornerRadius="10" 
+                        Clicked="Btn_Agregar_Clicked"></Button>-->
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="AppBancaEnLineaWeb.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Center" Padding="30">
+            <Label x:Name="Lbl_Username" Text="" HorizontalOptions="End"></Label>
+            <Grid VerticalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0"
+                        x:Name="Btn_PagarServicio"
+					    Text="Pagar Servicios"
+                        TextColor="White"
+                        BackgroundColor="DarkBlue"
+                        CornerRadius="50"
+                        HorizontalOptions="Fill"
+                        Clicked="Btn_PagarServicio_Clicked"/>
+                <Button Grid.Column="1"
+                        x:Name="Btn_PagoList"
+					    Text="Lista de Pagos"
+                        TextColor="White"
+                        BackgroundColor="DarkBlue"
+                        CornerRadius="50"
+                        HorizontalOptions="Fill"
+                        Clicked="Btn_PagoList_Clicked"/>
+            </Grid>
+            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell Height="30">
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding CUE_DESCRIPCION_label}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Grid VerticalOptions="Center" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="AUTO"  />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0"                     
+                    Image="anadir.png"
+						Padding="15"
+                    BackgroundColor="White"
+                    HorizontalOptions="Start"
+                    CornerRadius="50"
+					Margin="15, 0"
+                    Clicked="AgregarTapped"/>
+                <Button Grid.Column="1" 
+					Image="modificar.png"
+						Padding="15"
+                    BackgroundColor="White"
+                    HorizontalOptions="Center"
+					Margin="15, 0"
+					CornerRadius="50"
+                    Clicked="ModificarTapped"/>
+                <Button Grid.Column="2"                     
+                    Image="eliminar.png"
+						Padding="15"
+					FontAttributes="Bold"
+                    BackgroundColor="White"
+                    CornerRadius="50"
+					Margin="12, 0"
+                    HorizontalOptions="End"
+                    Clicked="EliminarTapped"/>
+                <Button Grid.Column="3" 
+					Image="actualizar.png"
+						Padding="15"
+                    BackgroundColor="White"  
+                    CornerRadius="50"
+					HorizontalOptions="End"
+                    Clicked="Btn_RefrescarPantalla"
+                    Margin="15, 0"/>
+
+            </Grid>
+            <Grid VerticalOptions="Fill" Margin="-100, 10" Padding="0, 10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Button Grid.Column="0" 
+					Text="CERRAR SESIÓN"
+                    TextColor="White"
+                    BackgroundColor="DarkRed"
+                    HorizontalOptions="FillAndExpand"
+                    CornerRadius="30"
+                    Clicked="CerrarSesionTapped"/>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

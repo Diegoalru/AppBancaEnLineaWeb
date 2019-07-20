@@ -1,29 +1,24 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppBancaEnLineaWeb.Models;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace AppBancaEnLineaWeb
 {
     public partial class App : Application
     {
+        static public Usuario usuarioActual = new Usuario();
+
         public App()
         {
             InitializeComponent();
-
-            /*
-             * FIXME: 
-             *      1. Crear la vista LoginPage. 
-             *      2. Una ves creada LoginPage, eliminar la siguiente linea (19). 
-             */
-            MainPage = new MainPage();
-            //Una ves hecho lo anterior eliminar MainPage del proyecto.
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
         {
-            //FIXME: Habilitar cuando este creada la vista LoginPage().
-            //MainPage = new LoginPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnSleep()
@@ -33,8 +28,8 @@ namespace AppBancaEnLineaWeb
 
         protected override void OnResume()
         {
-            //FIXME: Habilitar cuando este creada la vista TestPage() en la carpeta Views.
-            //MainPage = new Views.TestPage();
+            //FIXME: Habilitar cuando este creada la vista ResumePage() en la carpeta Views.
+            //MainPage = new Views.ResumePage();
         }
     }
 }
