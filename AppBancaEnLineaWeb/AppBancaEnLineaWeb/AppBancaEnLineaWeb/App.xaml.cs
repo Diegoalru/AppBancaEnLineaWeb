@@ -28,8 +28,8 @@ namespace AppBancaEnLineaWeb
 
         protected override void OnResume()
         {
-            //FIXME: Habilitar cuando este creada la vista ResumePage() en la carpeta Views.
-            //MainPage = new Views.ResumePage();
+            usuarioActual = null;
+            MainPage = new Views.ResumePage();
         }
     }
 }
