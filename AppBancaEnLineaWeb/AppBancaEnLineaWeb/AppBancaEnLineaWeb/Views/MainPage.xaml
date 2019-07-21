@@ -66,8 +66,8 @@
                     HorizontalOptions="End"
                     Clicked="EliminarTapped"/>
                 <Button Grid.Column="3" 
-					Image="actualizar.png"
-						Padding="15"
+					Image="transferencia.png"
+					Padding="15"
                     BackgroundColor="White"  
                     CornerRadius="50"
 					HorizontalOptions="End"
