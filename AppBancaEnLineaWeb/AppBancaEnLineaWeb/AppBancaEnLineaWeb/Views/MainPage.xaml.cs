@@ -32,6 +32,7 @@ namespace AppBancaEnLineaWeb.Views
         {
             try
             {
+                //Obtiene las cuentas desde CuentaManager y las agrega a una lista.
                 IEnumerable<Cuenta> cuentas = await cuentaManager.GetCuentas(App.usuarioActual.USU_CODIGO.ToString());
                 CuentasList.ItemsSource = cuentas;
                 CuentasList.BindingContext = cuentas;
@@ -61,14 +62,25 @@ namespace AppBancaEnLineaWeb.Views
 
         }
 
+        /// <summary>
+        /// Metodo usado para redireccionar a CuentaPage.
+        /// </summary>
         private void AgregarTapped(object sender, EventArgs e)
         {
-
+            Application.Current.MainPage = new CuentaPage();
         }
 
+        /// <summary>
+        /// Metodo usado para cambiar la informacion de una cuenta.
+        /// </summary>
         private void ModificarTapped(object sender, EventArgs e)
         {
-
+            //Castemos el objeto selecionado para poder agregarlo en un objeto de tipo Cuenta.
+            Cuenta cuenta = (Cuenta) CuentasList.SelectedItem;
+            if (cuenta != null)
+                Application.Current.MainPage = new CuentaPage(cuenta);
+            else
+                DisplayAlert("Advertencia", "Si desea modificar una cuenta, debes seleccionarla primero.", "OK");
         }
 
         private void EliminarTapped(object sender, EventArgs e)
@@ -100,5 +112,6 @@ namespace AppBancaEnLineaWeb.Views
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
+
     }
 }
