@@ -33,7 +33,7 @@ namespace AppBancaEnLineaWeb.Views
             try
             {
                 //Obtiene las cuentas desde CuentaManager y las agrega a una lista.
-                IEnumerable<Cuenta> cuentas = await cuentaManager.GetCuentas(App.usuarioActual.USU_CODIGO.ToString());
+                IEnumerable<Cuenta> cuentas = await cuentaManager.ObtenerCuentas(App.usuarioActual.USU_CODIGO.ToString());
                 CuentasList.ItemsSource = cuentas;
                 CuentasList.BindingContext = cuentas;
             }
@@ -54,7 +54,7 @@ namespace AppBancaEnLineaWeb.Views
 
         private void Btn_PagarServicio_Clicked(object sender, EventArgs e)
         {
-
+            Application.Current.MainPage = new PagoPage();
         }
 
         private void Btn_PagoList_Clicked(object sender, EventArgs e)
@@ -83,14 +83,33 @@ namespace AppBancaEnLineaWeb.Views
                 DisplayAlert("Advertencia", "Si desea modificar una cuenta, debes seleccionarla primero.", "OK");
         }
 
-        private void EliminarTapped(object sender, EventArgs e)
+        private async void EliminarTapped(object sender, EventArgs e)
         {
+            try
+            {
+                Cuenta cuenta = (Cuenta)CuentasList.SelectedItem;
 
+                string idEliminado =
+                    await
+                    cuentaManager.EliminarCuenta(cuenta.CUE_CODIGO.ToString());
+
+                await DisplayAlert("Cuentas",
+                   "Cuenta eliminada correctamente",
+                   "Ok", "Cancel");
+
+                CargarCuentas();
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Cuentas",
+                                  "Cuenta actualizada " +
+                                  "correctamente",
+                                  "Ok", "Cancel");
+            }
         }
 
         private void Btn_RefrescarPantalla(object sender, EventArgs e)
         {
-
         }
 
         /// <summary>

@@ -172,14 +172,95 @@ namespace AppBancaEnLineaWeb.Views
             Application.Current.MainPage = new MainPage();
         }
 
-        private void ActualizarTapped(Object sender, System.EventArgs e)
+        private async void ActualizarTapped(Object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new MainPage();
+            try
+            {
+                CuentaManager cuentaManager = new CuentaManager();
+                Cuenta cuentaActualizada = new Cuenta();
+
+                string moneda = string.Empty;
+                switch (Pkr_Moneda.SelectedItem.ToString())
+                {
+                    case "Colones":
+                        moneda = "COL";
+                        break;
+                    case "Dolares":
+                        moneda = "DOL";
+                        break;
+                    default:
+                        moneda = "EUR";
+                        break;
+                }
+                Cuenta cuenta = new Cuenta()
+                {
+                    CUE_CODIGO = Convert.ToInt32(Txt_Codigo.Text),
+                    USU_CODIGO = App.usuarioActual.USU_CODIGO,
+                    CUE_DESCRIPCION = Txt_Descripcion.Text,
+                    CUE_MONEDA = moneda,
+                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
+                    CUE_ESTADO =
+                    Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
+
+                };
+
+                cuentaActualizada = await cuentaManager.ActualizarCuenta(cuenta);
+
+                await DisplayAlert("Cuentas",
+                    "Cuenta actualizada correctamente",
+                    "Ok", "Cancel");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Cuentas",
+                                   "Error: " + ex.Message,
+                                   "Ok", "Cancel");
+            }
         }
 
-        private void AgregarTapped(Object sender, System.EventArgs e)
+        private async void AgregarTapped(Object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new MainPage();
+            try
+            {
+                CuentaManager cuentaManager = new CuentaManager();
+                Cuenta cuentaIngresada = new Cuenta();
+                string moneda = string.Empty;
+                switch (Pkr_Moneda.SelectedItem.ToString())
+                {
+                    case "Colones":
+                        moneda = "COL";
+                        break;
+                    case "Dolares":
+                        moneda = "DOL";
+                        break;
+                    default:
+                        moneda = "EUR";
+                        break;
+                }
+                Cuenta cuenta = new Cuenta()
+                {
+                    USU_CODIGO = App.usuarioActual.USU_CODIGO,
+                    CUE_DESCRIPCION = Txt_Descripcion.Text,
+                    CUE_MONEDA = moneda,
+                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
+                    CUE_ESTADO =
+                    Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
+
+                };
+
+                //FIXME:
+
+                cuentaIngresada = await cuentaManager.AgregarCuenta(cuenta);
+                await DisplayAlert("Cuentas",
+                    "Cuenta agregada correctamente",
+                    "Ok", "Cancel");
+            }
+            catch (Exception ex)
+            {
+                await DisplayAlert("Cuentas",
+                    "Error: " + ex.Message,
+                    "Ok", "Cancel");
+            }
         }
 
         #endregion
