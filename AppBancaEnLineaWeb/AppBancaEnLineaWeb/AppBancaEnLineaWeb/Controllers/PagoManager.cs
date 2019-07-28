@@ -8,18 +8,19 @@ using Newtonsoft.Json;
 
 namespace AppBancaEnLineaWeb.Controllers
 {
-    public class CuentaManager
+    public class PagoManager
     {
+
         #region Variables
         /// <summary>
-        /// URL que retorna (GET) y recibe (PUT) información de una cuenta actualizada.
+        /// URL que retorna (GET) y recibe (PUT) información de un pago actualizada.
         /// </summary>
-        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/";
+        const string Url = "https://www.gruposama.com/WebApiSecureSAMA/api/pago/";
 
         /// <summary>
-        /// URL que inserta (POST) una cuenta.
+        /// URL que inserta (POST) un pago.
         /// </summary>
-        const string UrlAgregar = "https://www.gruposama.com/WebApiSecureSAMA/api/cuenta/ingresar/";
+        const string UrlAgregar = "https://www.gruposama.com/WebApiSecureSAMA/api/pago/ingresar";
 
         /// <summary>
         /// Llamado a la clase que posee la validación del usuario.
@@ -28,63 +29,71 @@ namespace AppBancaEnLineaWeb.Controllers
         #endregion
 
         #region Constructor
-        public CuentaManager()
-        { }
+        public PagoManager()
+        {
+
+        }
         #endregion
 
         #region Metodos
+        
         /// <summary>
-        /// Devuelve todas las cuentas del usuario.
+        /// Crea una lista de los pagos del usuario.
         /// </summary>
         /// <param name="userCod">Codigo del usuario actual.</param>
-        /// <returns>Devuele una lista de las cuentas del usuario.</returns>
-        public async Task<IEnumerable<Cuenta>> ObtenerCuentas(string userCod)
+        /// <returns>Lista con todos los pagos del usuario.</returns>
+        public async Task<IEnumerable<Pago>> ObtenerPagos(string userCod)
         {
             HttpClient cliente = Usuario.ObtenerCliente();
             var uri = new Uri(string.Format(Url + userCod));
             string respuesta = await cliente.GetStringAsync(uri);
-            return JsonConvert.DeserializeObject<IEnumerable<Cuenta>>(respuesta);
+            return JsonConvert.DeserializeObject<IEnumerable<Pago>>(respuesta);
         }
 
         /// <summary>
-        /// Agrega una cuenta.
+        /// Agregar un pago.
         /// </summary>
-        /// <param name="cuenta">Cuenta que se desea agregar.</param>
+        /// <param name="pago">Objeto pago que va a ser agregado.</param>
         /// <returns>Respuesta del servidor.</returns>
-        public async Task<Cuenta> AgregarCuenta(Cuenta cuenta)
+        public async Task<Pago> AgregarPago(Pago pago)
         {
             HttpClient cliente = Usuario.ObtenerCliente();
             var respuesta = await cliente.PostAsync(UrlAgregar,
-                new StringContent(JsonConvert.SerializeObject(cuenta),
+                new StringContent(JsonConvert.SerializeObject(pago),
                 Encoding.UTF8, "application/json"));
-            return JsonConvert.DeserializeObject<Cuenta>(await respuesta.Content.ReadAsStringAsync());
+
+            return JsonConvert.DeserializeObject<Pago>(await
+            respuesta.Content.ReadAsStringAsync());
         }
 
         /// <summary>
-        /// Actualiza los datos de una cuenta.
+        /// Actualiza los datos de un pago.
         /// </summary>
-        /// <param name="cuenta">Cuenta modificada.</param>
+        /// <param name="pago">Pago modificada.</param>
         /// <returns>Respuesta del servidor.</returns>
-        public async Task<Cuenta> ActualizarCuenta(Cuenta cuenta)
+        [Obsolete("Esta función no está permitida.", true)]
+        public async Task<Pago> ActualizarPago(Pago pago)
         {
             HttpClient cliente = Usuario.ObtenerCliente();
             var respuesta = await cliente.PutAsync(Url,
-                new StringContent(JsonConvert.SerializeObject(cuenta),
+                new StringContent(JsonConvert.SerializeObject(pago),
                 Encoding.UTF8, "application/json"));
-            return JsonConvert.DeserializeObject<Cuenta>(await respuesta.Content.ReadAsStringAsync());
+            return JsonConvert.DeserializeObject<Pago>(await respuesta.Content.ReadAsStringAsync());
         }
 
         /// <summary>
-        /// Elimina una cuenta mediante su codigo.
+        /// Elimina un pago mediante su codigo.
         /// </summary>
-        /// <param name="cuentaCod">Codigo de la cuenta a eliminar.</param>
+        /// <param name="pagoCod">Codigo del pago a eliminar.</param>
         /// <returns>Respuesta del servidor.</returns>
-        public async Task<string> EliminarCuenta(string cuentaCod)
+        [Obsolete("Esta función no está permitida.", true)]
+        public async Task<string> EliminarPago(string pagoCod)
         {
             HttpClient cliente = Usuario.ObtenerCliente();
-            var respuesta = await cliente.DeleteAsync(Url + cuentaCod);
+            var respuesta = await cliente.DeleteAsync(Url + pagoCod);
             return JsonConvert.DeserializeObject<string>(await respuesta.Content.ReadAsStringAsync());
         }
         #endregion
+
     }
 }
