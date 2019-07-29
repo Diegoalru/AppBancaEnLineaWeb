@@ -13,17 +13,17 @@ using AppBancaEnLineaWeb.Views;
 
 namespace AppBancaEnLineaWeb
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class LoginPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class LoginPage : ContentPage
+    {
         private Dispositivo dispositivo = new Dispositivo();
 
         #region Constructor
-        public LoginPage ()
-		{
-			InitializeComponent ();
+        public LoginPage()
+        {
+            InitializeComponent();
 
-            //Dia de la presentación descomentar
+            //Día de la presentación descomentar
 
             //Txt_Username.Text = string.Empty;
             //Txt_Password.Text = string.Empty;
@@ -34,8 +34,11 @@ namespace AppBancaEnLineaWeb
         #endregion
 
         #region Metodos
+        /* FIXME:
+         * Inicio de sesión.
+         */
         /// <summary>
-        /// Inicio de sesión. ¡¡Cambiar!!
+        /// Inicio de sesión.
         /// </summary>
         private async void Btn_Login_Clicked(object sender, System.EventArgs e)
         {
@@ -45,7 +48,7 @@ namespace AppBancaEnLineaWeb
                 bool ValidacionUsername = VerificaCampo(Txt_Username.Text);
                 bool ValidacionPassword = VerificaCampo(Txt_Password.Text);
 
-                #region Mostramos mensaje de error para el dato incompleto.
+                #region En caso de error en un solo campo, mostrar mensaje de error.
                 if (ValidacionUsername)
                 {
                     await DisplayAlert("Validación de ingreso.", "El campo de usuario no puede estar vacio.", "OK");
@@ -55,6 +58,7 @@ namespace AppBancaEnLineaWeb
                     await DisplayAlert("Validación de ingreso.", "El campo de la contraseña no puede estar vacio.", "OK");
                 }
                 #endregion
+
                 if (!(ValidacionUsername && ValidacionPassword))
                 {
                     if (dispositivo.ValidarConexionInternet())
@@ -72,17 +76,17 @@ namespace AppBancaEnLineaWeb
                             await DisplayAlert("Error al ingresar", "Credenciales inválidas", "Ok");
                         }
                     }
-                }
-                else
-                {
-                    await DisplayAlert("Error de conexion", "No hay conexion con internet", "OK");
+                    else
+                    {
+                        await DisplayAlert("Error de conexion", "No hay conexion con internet", "OK");
+                    }
                 }
             }
             else
             {
                 await DisplayAlert("Validación de ingreso.", "Debes proporcionar los datos solicitados.", "OK");
             }
-            
+
         }
 
         /// <summary>
