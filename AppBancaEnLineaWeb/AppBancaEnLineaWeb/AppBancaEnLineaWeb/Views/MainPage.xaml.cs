@@ -13,17 +13,29 @@ using AppBancaEnLineaWeb.Views;
 
 namespace AppBancaEnLineaWeb.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainPage : ContentPage
-	{
-		public MainPage ()
-		{
-			InitializeComponent ();
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class MainPage : ContentPage
+    {
+        private CuentaManager cuentaManager = new CuentaManager();
+
+        #region Constructor
+        public MainPage()
+        {
+            InitializeComponent();
             CargaUser();
             CargarCuentas();
-		}
+        }
+        #endregion
 
-        private CuentaManager cuentaManager = new CuentaManager();
+        #region Cuentas
+        /// <summary>
+        /// Muestra el usuario del usuario actual.
+        /// </summary>
+        public void CargaUser()
+        {
+            string user = App.usuarioActual.USU_USERNAME;
+            Lbl_Username.Text = "Usuario: " + user;
+        }
 
         /// <summary>
         /// Muestra la lista de cuentas del usuario.
@@ -44,25 +56,6 @@ namespace AppBancaEnLineaWeb.Views
         }
 
         /// <summary>
-        /// Muestra el usuario del usuario actual.
-        /// </summary>
-        public void CargaUser()
-        {
-            string user = App.usuarioActual.USU_USERNAME;
-            Lbl_Username.Text = "Usuario: " + user;
-        }
-
-        private void Btn_PagarServicio_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new PagoPage();
-        }
-
-        private void Btn_PagoList_Clicked(object sender, EventArgs e)
-        {
-
-        }
-
-        /// <summary>
         /// Metodo usado para redireccionar a CuentaPage.
         /// </summary>
         private void AgregarTapped(object sender, EventArgs e)
@@ -76,38 +69,59 @@ namespace AppBancaEnLineaWeb.Views
         private void ModificarTapped(object sender, EventArgs e)
         {
             //Castemos el objeto selecionado para poder agregarlo en un objeto de tipo Cuenta.
-            Cuenta cuenta = (Cuenta) CuentasList.SelectedItem;
+            Cuenta cuenta = (Cuenta)CuentasList.SelectedItem;
             if (cuenta != null)
                 Application.Current.MainPage = new CuentaPage(cuenta);
             else
                 DisplayAlert("Advertencia", "Si desea modificar una cuenta, debes seleccionarla primero.", "OK");
         }
 
+        /// <summary>
+        /// Elimina una cuenta.
+        /// </summary>
         private async void EliminarTapped(object sender, EventArgs e)
         {
             try
             {
                 Cuenta cuenta = (Cuenta)CuentasList.SelectedItem;
 
-                string idEliminado =
-                    await
-                    cuentaManager.EliminarCuenta(cuenta.CUE_CODIGO.ToString());
-
-                await DisplayAlert("Cuentas",
-                   "Cuenta eliminada correctamente",
-                   "Ok", "Cancel");
-
-                CargarCuentas();
+                bool respuesta = await DisplayAlert("Advertencia", "Desea eliminar la cuenta " + cuenta.CUE_CODIGO + ".", "Aceptar", "Cancelar");
+                if (respuesta)
+                {
+                    await cuentaManager.EliminarCuenta(cuenta.CUE_CODIGO.ToString());
+                    await DisplayAlert("Mensaje", "Cuenta eliminada correctamente", "OK");
+                    CargarCuentas();
+                }
+                else { /* No hacer codigo aqui. */ }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                await DisplayAlert("Cuentas",
-                                  "Cuenta actualizada " +
-                                  "correctamente",
-                                  "Ok", "Cancel");
+                await DisplayAlert("Aviso", "Error: " + ex.Message, "Aceptar");
             }
         }
+        #endregion
 
+        #region Pagos
+        /// <summary>
+        /// Carga la pantalla de PagoPage.
+        /// </summary>
+        private void Btn_PagarServicio_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new PagoPage();
+        }
+
+        /// <summary>
+        /// Carga la pantalla PagoPageList.
+        /// </summary>
+        private void Btn_PagoList_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        #endregion
+
+        #region Otros metodos.
+        [Obsolete("Este metodo no se usa por falta del botón en el MainPage.", false)]
         private void Btn_RefrescarPantalla(object sender, EventArgs e)
         {
         }
@@ -119,18 +133,20 @@ namespace AppBancaEnLineaWeb.Views
         {
             try
             {
-                bool respuesta = await DisplayAlert("Cerrar Sesión", "¿Desea cerrar la sesión?", "OK", "Cancelar");
+                bool respuesta = await DisplayAlert("Cerrar Sesión", "¿Desea cerrar la sesión?", "Aceptar", "Cancelar");
                 if (respuesta)
                 {
                     Application.Current.MainPage = new LoginPage();
                     App.usuarioActual = null;
                 }
+                else { /* No hacer codigo aqui. */ }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
             }
         }
+        #endregion
 
     }
 }
