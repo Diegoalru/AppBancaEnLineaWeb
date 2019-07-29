@@ -9,17 +9,18 @@ using Xamarin.Forms.Xaml;
 
 using AppBancaEnLineaWeb.Controllers;
 using AppBancaEnLineaWeb.Models;
-using AppBancaEnLineaWeb.Views;
 
 namespace AppBancaEnLineaWeb.Views
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class CuentaPage : ContentPage
-	{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class CuentaPage : ContentPage
+    {
+        /// <summary>
+        /// Se usa para actualizar una cuenta. Esta posee los datos iniciales de la cuenta.
+        /// </summary>
         private Cuenta cuentaVieja = new Cuenta();
 
         #region Constructores
-
         /// <summary>
         /// Constructor al crear una cuenta.
         /// </summary>
@@ -33,7 +34,7 @@ namespace AppBancaEnLineaWeb.Views
         /// <summary>
         /// Constructor para actualizar una cuenta.
         /// </summary>
-        /// <param name="cuenta">Cuenta queva a modificarse.</param>
+        /// <param name="cuenta">Cuenta que se va a modificar.</param>
         public CuentaPage(Cuenta cuenta)
         {
             InitializeComponent();
@@ -63,98 +64,6 @@ namespace AppBancaEnLineaWeb.Views
         #endregion
 
         #region Metodos
-        /*
-        private async void AgregarTapped(Object sender, System.EventArgs e)
-        {
-            try
-            {
-                string moneda = string.Empty;
-                switch (Pkr_Moneda.SelectedItem.ToString())
-                {
-                    case "DOLARES":
-                        moneda = "DOL";
-                        break;
-                    case "COLONES":
-                        moneda = "COL";
-                        break;
-                    default:
-                        moneda = "EUR";
-                        break;
-                }
-
-                Cuenta cuenta = new Cuenta
-                {
-                    CUE_CODIGO = 1,
-                    USU_CODIGO = App.repositorioUsuario.GetUsuario().USU_CODIGO,
-                    CUE_DESCRIPCION = Txt_Descripcion.Text,
-                    CUE_MONEDA = moneda,
-                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
-                    CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
-                };
-
-                bool resultado = await DisplayAlert("Cuenta", "¿Desea agregar la siguiente cuenta?\n" + cuenta.ToString(), "OK", "Cancel");
-                if (resultado)
-                {
-                    App.repositorioCuenta.AgregarCuenta(cuenta);
-                    await DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
-                    Limpiar();
-                }
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("Error", "Verifica que todos los datos esten completos.", "Ok");
-            }
-        }
-
-        private async void ActualizarTapped(Object sender, System.EventArgs e)
-        {
-            try
-            {
-                string moneda = string.Empty;
-                switch (Pkr_Moneda.SelectedItem.ToString())
-                {
-                    case "DOLARES":
-                        moneda = "DOL";
-                        break;
-                    case "COLONES":
-                        moneda = "COL";
-                        break;
-                    default:
-                        moneda = "EUR";
-                        break;
-                }
-
-                Cuenta cuentaNueva = new Cuenta
-                {
-                    USU_CODIGO = App.repositorioUsuario.GetUsuario().USU_CODIGO,
-                    CUE_CODIGO = Convert.ToInt32(Txt_Codigo.Text),
-                    CUE_DESCRIPCION = Txt_Descripcion.Text,
-                    CUE_MONEDA = moneda,
-                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
-                    CUE_ESTADO = Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
-                };
-
-                string cuentaAnterior = string.Format("Cuenta Anterior:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
-                    this.cuentaVieja.CUE_DESCRIPCION, this.cuentaVieja.CUE_MONEDA, this.cuentaVieja.CUE_SALDO, this.cuentaVieja.CUE_ESTADO);
-                string cuentaActual = string.Format("Cuenta Actualizada:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
-                    cuentaNueva.CUE_DESCRIPCION, cuentaNueva.CUE_MONEDA, cuentaNueva.CUE_SALDO, cuentaNueva.CUE_ESTADO);
-
-                bool resultado = await DisplayAlert("Verifique los datos", cuentaAnterior + "\n" + cuentaActual + "\n¿Desea Continuar?", "OK", "Cancel");
-
-                if (resultado)
-                {
-                    await DisplayAlert("SQLite", App.repositorioCuenta.StatusMessage, "OK");
-                    App.repositorioCuenta.ActualizaCuenta(cuentaNueva);
-                    Application.Current.MainPage = new MainPage();
-                }
-            }
-            catch (Exception)
-            {
-                await DisplayAlert("Error", "Verifica que todos los datos esten completos.", "Ok");
-            }
-        }
-        */
-
         /// <summary>
         /// Limpia todos los Textboxs.
         /// </summary>
@@ -167,11 +76,17 @@ namespace AppBancaEnLineaWeb.Views
             Pkr_Moneda.SelectedItem = 0;
         }
 
+        /// <summary>
+        /// Regresa al menu pricipal.
+        /// </summary>
         private void RegresarTapped(Object sender, System.EventArgs e)
         {
             Application.Current.MainPage = new MainPage();
         }
 
+        /// <summary>
+        /// Actualizar una cuenta.
+        /// </summary>
         private async void ActualizarTapped(Object sender, System.EventArgs e)
         {
             try
@@ -179,6 +94,7 @@ namespace AppBancaEnLineaWeb.Views
                 CuentaManager cuentaManager = new CuentaManager();
                 Cuenta cuentaActualizada = new Cuenta();
 
+                #region Cargar datos fijos
                 string moneda = string.Empty;
                 switch (Pkr_Moneda.SelectedItem.ToString())
                 {
@@ -192,38 +108,55 @@ namespace AppBancaEnLineaWeb.Views
                         moneda = "EUR";
                         break;
                 }
-                Cuenta cuenta = new Cuenta()
-                {
-                    CUE_CODIGO = Convert.ToInt32(Txt_Codigo.Text),
-                    USU_CODIGO = App.usuarioActual.USU_CODIGO,
-                    CUE_DESCRIPCION = Txt_Descripcion.Text,
-                    CUE_MONEDA = moneda,
-                    CUE_SALDO = Convert.ToDecimal(Txt_Saldo.Text),
-                    CUE_ESTADO =
-                    Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
+                #endregion
 
+                //Cuenta que almacena los cambios nuevos.
+                Cuenta cuentaNueva = new Cuenta()
+                {
+                    CUE_CODIGO  =   Convert.ToInt32(Txt_Codigo.Text),
+                    USU_CODIGO  =   App.usuarioActual.USU_CODIGO,
+                    CUE_DESCRIPCION = Txt_Descripcion.Text,
+                    CUE_MONEDA  =   moneda,
+                    CUE_SALDO   =   Convert.ToDecimal(Txt_Saldo.Text),
+                    CUE_ESTADO  =   Pkr_Estado.SelectedItem.ToString().Substring(0, 1)
                 };
 
-                cuentaActualizada = await cuentaManager.ActualizarCuenta(cuenta);
+                //Datos de la cuenta vieja.
+                string cuentaAnterior = string.Format("Cuenta Anterior:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
+                    this.cuentaVieja.CUE_DESCRIPCION, this.cuentaVieja.CUE_MONEDA, this.cuentaVieja.CUE_SALDO, this.cuentaVieja.CUE_ESTADO);
 
-                await DisplayAlert("Cuentas",
-                    "Cuenta actualizada correctamente",
-                    "Ok", "Cancel");
+                //Datos actualizados.
+                string cuentaActual = string.Format("Cuenta Actualizada:\nDescripcion: {0}\nMoneda: {1}\nSaldo: {2}\nEstado: {3}",
+                    cuentaNueva.CUE_DESCRIPCION, cuentaNueva.CUE_MONEDA, cuentaNueva.CUE_SALDO, cuentaNueva.CUE_ESTADO);
+
+                //Validar la respuesta del usuario.
+                bool resultado = await DisplayAlert("Verifique los datos", cuentaAnterior + "\n" + cuentaActual + "\n¿Desea Continuar?", "Aceptar", "Cancelar");
+                if (resultado)
+                {
+                    await DisplayAlert("Mensaje", "Cuenta actualizada correctamente", "Aceptar");
+                    cuentaActualizada = await cuentaManager.ActualizarCuenta(cuentaNueva);
+                    Application.Current.MainPage = new MainPage();
+                }
+                else { /* No hacer codigo aqui. */ }
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Cuentas",
-                                   "Error: " + ex.Message,
-                                   "Ok", "Cancel");
+                await DisplayAlert("Aviso", "Error: " + ex.Message, "Aceptar");
             }
         }
 
+        /// <summary>
+        /// Metodo para agregar una cuenta.
+        /// </summary>
         private async void AgregarTapped(Object sender, System.EventArgs e)
         {
             try
             {
                 CuentaManager cuentaManager = new CuentaManager();
+                //Preguntar para que sirve esta variable.
                 Cuenta cuentaIngresada = new Cuenta();
+
+                #region Cargar datos fijos.
                 string moneda = string.Empty;
                 switch (Pkr_Moneda.SelectedItem.ToString())
                 {
@@ -237,6 +170,9 @@ namespace AppBancaEnLineaWeb.Views
                         moneda = "EUR";
                         break;
                 }
+                #endregion
+
+                //Cuenta que va a almacenar los datos
                 Cuenta cuenta = new Cuenta()
                 {
                     USU_CODIGO = App.usuarioActual.USU_CODIGO,
@@ -248,21 +184,32 @@ namespace AppBancaEnLineaWeb.Views
 
                 };
 
-                //FIXME:
-
-                cuentaIngresada = await cuentaManager.AgregarCuenta(cuenta);
-                await DisplayAlert("Cuentas",
-                    "Cuenta agregada correctamente",
-                    "Ok", "Cancel");
+                //Validar la creacion de la cuenta.
+                bool respuesta = await DisplayAlert("Agregar Cuenta", "Desea agregar la cuenta:\n" + cuenta.ToString(), "Agregar", "Cancelar");
+                if (respuesta)
+                {
+                    //Agregar la cuenta.
+                    cuentaIngresada = await cuentaManager.AgregarCuenta(cuenta);
+                    /*
+                     * FIXME:
+                     *  1. Validar que realmente se creo la cuenta.
+                     *      Opciones:
+                     *          a. Validar con la respuesta del servidor.
+                     *          b. Llamar otro metodo para validar la creación de la cuenta.
+                     */
+                    //Mensaje de exito.
+                    await DisplayAlert("Mensaje", "Cuenta agregada correctamente", "Aceptar");
+                }
+                else { /* No hacer codigo aqui. */ }
+                Limpiar();
             }
             catch (Exception ex)
             {
-                await DisplayAlert("Cuentas",
+                await DisplayAlert("Aviso",
                     "Error: " + ex.Message,
-                    "Ok", "Cancel");
+                    "Aceptar");
             }
         }
-
         #endregion
     }
 }
