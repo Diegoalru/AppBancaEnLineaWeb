@@ -30,10 +30,16 @@ namespace AppBancaEnLineaWeb
 
             Txt_Username.Text = "jperez";
             Txt_Password.Text = "123456";
+
         }
         #endregion
 
         #region Metodos
+        private void CargaImage()
+        {
+
+        }
+
         /* FIXME:
          * Inicio de sesión.
          */
@@ -69,7 +75,8 @@ namespace AppBancaEnLineaWeb
                         {
                             var jwthandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
                             App.usuarioActual.Token = jwthandler.ReadToken(App.usuarioActual.TOKEN);
-                            Application.Current.MainPage = new MainPage();
+                            //Application.Current.MainPage = new MainPage();
+                            Application.Current.MainPage = new MainTabbedPage();
                         }
                         else
                         {
