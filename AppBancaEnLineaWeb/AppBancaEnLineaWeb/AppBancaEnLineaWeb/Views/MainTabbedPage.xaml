@@ -10,9 +10,17 @@
 
     <local:UsuarioPage></local:UsuarioPage>
     <local:MainPage></local:MainPage>
-    <local:MainPage></local:MainPage>
-    <local:MainPage></local:MainPage>
-    <local:ResumePage></local:ResumePage>
+    <local:PagoPage></local:PagoPage>
+    <local:PagoPageList></local:PagoPageList>
+    <local:PagoPageList></local:PagoPageList>
+
+    <!--
+    1- Informacion Usuario PONER LO DE CERRAR SESION
+    2- Main page QUITAR CERRAR SESION!!
+    3- pagar servicios
+    4- ver serviciosa
+    5- hacer transferencias y lista que se abra con un boton en esa pagina. CREARLA!!
+    -->
 
     
     <!--
