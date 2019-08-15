@@ -45,8 +45,7 @@
                 TextColor="White"
                 CornerRadius="30"
                 BackgroundColor="Green"
-                Margin="10, 0"
-                Clicked="Btn_Pagar_Clicked">
+                Margin="10, 0">
             </Button>
             
         </StackLayout>

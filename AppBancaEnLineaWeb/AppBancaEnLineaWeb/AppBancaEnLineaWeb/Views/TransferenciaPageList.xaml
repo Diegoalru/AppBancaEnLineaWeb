@@ -7,6 +7,10 @@
             <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Button
+                Text="Ver Lista de Transferencias"
+                Clicked="Btn_Volver"
+                ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

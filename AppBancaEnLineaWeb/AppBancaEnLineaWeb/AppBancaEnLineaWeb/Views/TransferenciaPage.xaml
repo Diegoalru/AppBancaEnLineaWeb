@@ -16,13 +16,65 @@
                 Margin="40">
             </Label>
             <!--MAIN-->
+            <Picker 
+                Title="Seleccione la cuenta origen."
+                x:Name="Pkr_CuentaOrigen"
+				HorizontalOptions="Fill"
+                FontSize="Small">
+                <!-- Datos cargados desde C# -->
+            </Picker>
+            <Picker 
+                Title="Seleccione la cuenta destino."
+                x:Name="Pkr_CuentaDestino"
+				HorizontalOptions="Fill"
+                FontSize="Small">
+                <!-- Datos cargados desde C# -->
+            </Picker>
+            <Entry
+                x:Name="Txt_Descripcion"
+                Placeholder="Ingrese una descripción"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                FontSize="Small">
+            </Entry>
+            <Picker
+                Title="Seleccione un estado"
+                x:Name="Pkr_Estado"
+                FontSize="Small"
+				Margin="0, 0, 0, 50">
+                <Picker.Items>
+                    <x:String>Activo</x:String>
+                    <x:String>Inactivo</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label
+                x:Name="Lbl_SaldoDisponible"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                FontSize="Small">
+            </Label>
+            <Entry 
+                x:Name="Txt_Saldo"
+                Placeholder="Monto"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                FontSize="Small">
+            </Entry>
+            <Label
+                x:Name="Lbl_Date"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                FontSize="Small"
+				Margin="0,0,0,40"
+                Text="Fecha: ">
+            </Label>
             <!--END MAIN-->
-            <!--FOOTER-->
+            <!--BOTONES-->
             <Button
                 Text="Ver Lista de Transferencias"
-                Clicked="Btn_ListaTransferencias"
-                ></Button>
-            <!--END FOOTER-->
+                Clicked="Btn_ListaTransferencias">
+            </Button>
+            <!--BOTONES-->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
