@@ -16,5 +16,13 @@ namespace AppBancaEnLineaWeb.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Btn_ListaTransferencias(object sender, EventArgs e)
+        {
+            /*
+             * Crear link con la pagina TransferenciaPageList.
+             */
+            //App.Current.MainPage 
+        }
+    }
 }
