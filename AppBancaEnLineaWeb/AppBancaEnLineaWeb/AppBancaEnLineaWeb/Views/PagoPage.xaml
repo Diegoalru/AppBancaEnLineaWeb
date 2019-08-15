@@ -4,29 +4,33 @@
              x:Class="AppBancaEnLineaWeb.Views.PagoPage"
              BackgroundColor="#2D3653">
     <ContentPage.Content>
-        <StackLayout Padding="40" VerticalOptions="Start">
+        <StackLayout Padding="30" VerticalOptions="Start">
             <Label Text="Pago de Servicios" 
 				HorizontalOptions="Center" 
 				TextColor="#FFFFFF" 
 				FontSize="26"
-				TextDecorations="Underline"
 				FontAttributes="Bold" Margin="40">
             </Label>
             <Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
                     FontSize="16"
+                    TextColor="#FFFFFF" 
+                    TitleColor="#FFFFFF"
+                    
                     ItemDisplayBinding="{Binding SER_DESCRIPCION}"
                     Margin="10">
             </Picker>
             <Picker x:Name="Pkr_Cuentas"
                     Title="Seleccione una cuenta"
                     FontSize="16"
+                    TextColor="#FFFFFF" 
                     ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"
                     Margin="10">
             </Picker>
             <Entry  
                 x:Name="Txt_Monto"
                 Placeholder="Ingrese el monto"
+                TextColor="#FFFFFF" 
                 HorizontalOptions="Fill"
                 Keyboard="Telephone"
                 FontSize="16"
@@ -35,6 +39,7 @@
             <Label
                 x:Name="Lbl_Date"
                 HorizontalOptions="Fill"
+                TextColor="#FFFFFF" 
                 HorizontalTextAlignment="Center"
                 FontSize="16"
 				Margin="0,0,0,50"
@@ -49,6 +54,7 @@
 				Margin="30, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
