@@ -9,10 +9,10 @@
             BarTextColor="White">
 
     <local:MainPage></local:MainPage>
-    <local:UsuarioPage></local:UsuarioPage>
     <local:PagoPage></local:PagoPage>
     <local:PagoPageList></local:PagoPageList>
     <local:TransferenciaPage></local:TransferenciaPage>
+    <local:UsuarioPage></local:UsuarioPage>
 
     <!--
     1- Informacion Usuario PONER LO DE CERRAR SESION

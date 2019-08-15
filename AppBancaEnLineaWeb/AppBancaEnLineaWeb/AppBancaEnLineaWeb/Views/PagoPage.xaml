@@ -49,7 +49,6 @@
 				Margin="30, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
-            >
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
