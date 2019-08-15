@@ -16,5 +16,10 @@ namespace AppBancaEnLineaWeb.Views
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Btn_Volver(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new MainTabbedPage();
+        }
+    }
 }
