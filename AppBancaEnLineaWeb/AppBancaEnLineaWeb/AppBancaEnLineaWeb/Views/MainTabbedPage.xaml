@@ -12,7 +12,7 @@
     <local:MainPage></local:MainPage>
     <local:PagoPage></local:PagoPage>
     <local:PagoPageList></local:PagoPageList>
-    <local:PagoPageList></local:PagoPageList>
+    <local:TransferenciaPage></local:TransferenciaPage>
 
     <!--
     1- Informacion Usuario PONER LO DE CERRAR SESION

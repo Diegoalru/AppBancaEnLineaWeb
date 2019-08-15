@@ -5,10 +5,54 @@
              Title="Usuario"
              Icon="round_perm_identity_24.xml">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="30" VerticalOptions="Center">
+            <Label Text="Informacion" 
+                   HorizontalOptions="Center" 
+                   TextColor="#000000" 
+                   FontSize="26"
+                   TextDecorations="Underline"
+                   FontAttributes="Bold" Margin="40">
+            </Label>
+            <Label Text="Usuario" 
+                   HorizontalOptions="Center" 
+                   >
+            </Label>
+            <Label Text="Nombre"
+                   HorizontalOptions="Center"
+                   >
+            </Label>
+            <Label Text="Cedula"
+                   HorizontalOptions="Center"
+                   >
+            </Label>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#1690F4"/>
+            <Label Text="Correo"
+                   HorizontalOptions="Center"
+                   >
+            </Label>
+            
+            <Label
+                x:Name="Lbl_Date"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                FontSize="Small"
+                Margin="0,0,0,40"
+                Text="Fecha: ">
+            </Label>
+            <Button 
+                x:Name="infro"
+                Text="info"
+                TextColor="White"
+                CornerRadius="30"
+                BackgroundColor="Green"
+                Margin="10, 0"
+                Clicked="Btn_Pagar_Clicked">
+            </Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
+
+
+
+      
