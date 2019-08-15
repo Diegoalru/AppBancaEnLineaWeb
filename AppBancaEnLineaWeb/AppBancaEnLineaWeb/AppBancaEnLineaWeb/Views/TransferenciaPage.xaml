@@ -41,7 +41,7 @@
                 Title="Seleccione un estado"
                 x:Name="Pkr_Estado"
                 FontSize="Small"
-				Margin="0, 0, 0, 50">
+				>
                 <Picker.Items>
                     <x:String>Activo</x:String>
                     <x:String>Inactivo</x:String>
@@ -51,6 +51,7 @@
                 x:Name="Lbl_SaldoDisponible"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill"
+                Text="Prueba"
                 FontSize="Small">
             </Label>
             <Entry 
