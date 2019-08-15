@@ -1,60 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancaEnLineaWeb.Views.PagoPage">
+             x:Class="AppBancaEnLineaWeb.Views.PagoPage"
+             BackgroundColor="#2D3653">
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="Center">
+        <StackLayout Padding="40" VerticalOptions="Start">
             <Label Text="Pago de Servicios" 
 				HorizontalOptions="Center" 
-				TextColor="#000000" 
+				TextColor="#FFFFFF" 
 				FontSize="26"
 				TextDecorations="Underline"
 				FontAttributes="Bold" Margin="40">
             </Label>
             <Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
-                    FontSize="Small"
-                    ItemDisplayBinding="{Binding SER_DESCRIPCION}">
+                    FontSize="16"
+                    ItemDisplayBinding="{Binding SER_DESCRIPCION}"
+                    Margin="10">
             </Picker>
             <Picker x:Name="Pkr_Cuentas"
                     Title="Seleccione una cuenta"
-                    FontSize="Small"
-                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}">
+                    FontSize="16"
+                    ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"
+                    Margin="10">
             </Picker>
             <Entry  
                 x:Name="Txt_Monto"
                 Placeholder="Ingrese el monto"
                 HorizontalOptions="Fill"
                 Keyboard="Telephone"
-                HorizontalTextAlignment="Center"
-                FontSize="Small">
+                FontSize="16"
+                Margin="10">
             </Entry>
             <Label
                 x:Name="Lbl_Date"
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
-                FontSize="Small"
-				Margin="0,0,0,40"
+                FontSize="16"
+				Margin="0,0,0,50"
                 Text="Fecha: ">
             </Label>
             <Button 
                 x:Name="Btn_Pagar"
                 Text="Pagar"
                 TextColor="White"
-				CornerRadius="30"
-                BackgroundColor="Green"
-				Margin="10, 0"
+                CornerRadius="30"
+                BackgroundColor="#61518A"
+				Margin="30, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
-            <Button 
-                x:Name="Btn_Volver"
-                Text="Regresar"
-                TextColor="White"
-				CornerRadius="30"
-                BackgroundColor="Teal"
-				Margin="10, 0"
-                Clicked="Btn_Volver_Clicked">
-            </Button>
+            >
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancaEnLineaWeb.Views.PagoPageList">
+             x:Class="AppBancaEnLineaWeb.Views.PagoPageList"
+             BackgroundColor="#2D3653">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" Padding="30">
+        <StackLayout HorizontalOptions="Center" Padding="25">
             <Label Text="Pagos Realizados" 
 				HorizontalOptions="Center" 
-				TextColor="#000000" 
+				TextColor="#FFFFFF" 
 				FontSize="26"
 				TextDecorations="Underline"
-				FontAttributes="Bold" Margin="40">
+				FontAttributes="Bold" Margin="30">
             </Label>
             <Label
                 x:Name="Lbl_Title"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
-            <ListView x:Name="PagoList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default">
+            <ListView x:Name="PagoList" BackgroundColor="#545C73" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
@@ -30,7 +31,7 @@
                 x:Name="Btn_Regresar"
                 Text="Regresar"
                 TextColor="White"
-                BackgroundColor="Teal"
+                BackgroundColor="#61518A"
 				CornerRadius="30"
                 Clicked="Btn_Regresar_Clicked">
             </Button>
