@@ -10,17 +10,25 @@ namespace AppBancaEnLineaWeb.Utils
 {
     class Listas
     {
-        private ServiciosManager serviciosManager = new ServiciosManager();
 
-        public async List<Servicio> GetServicios()
-        {
-            List<Servicio> ListaServicios = null;
-            IEnumerable<Servicio> IServicios = await serviciosManager.ObtenerServicios();
-            foreach (var item in IServicios)
-            {
-                ListaServicios.Add(item);
-            }
-            return ListaServicios;
-        }
+        private ServiciosManager serviciosManager = new ServiciosManager();
+        //public static List<Servicio> serviciosList = new List<Servicio>();
+
+        //private async void CargarDatos()
+        //{
+        //    //Lista de los servicios.
+        //    IEnumerable<Servicio> servicios = await serviciosManager.ObtenerServicios();
+        //    foreach (var item in servicios)
+        //    {
+        //        serviciosList.Add(item);
+        //    }
+        //}
+
+        //public List<Servicio> ReturnServicios()
+        //{
+        //    CargarDatos();
+
+        //    return serviciosList;
+        //}
     }
 }
