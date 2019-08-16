@@ -4,7 +4,7 @@
              x:Class="AppBancaEnLineaWeb.Views.UsuarioPage"
              Title="Usuario"
              Icon="round_perm_identity_24.xml"
-             BackgroundColor="#2D3653">
+             BackgroundColor="#1C1C1C">
     <ContentPage.Content>
         <StackLayout Padding="30">
             <Label Text="Informacion" 

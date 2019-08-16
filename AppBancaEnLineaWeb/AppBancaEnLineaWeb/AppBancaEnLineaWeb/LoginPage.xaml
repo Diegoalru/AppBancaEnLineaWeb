@@ -36,8 +36,8 @@
                         Text="&#xf090; Iniciar Sesion" 
 						Margin="30, 0"
                         BorderColor="#252525" 
-						BackgroundColor="#FFFFFF" 
-                        TextColor="Green"
+						BackgroundColor="#606060" 
+                        TextColor="#FFFFFF"
 						CornerRadius="40" 
                         Clicked="Btn_Login_Clicked" FontAttributes="Bold"
                         FontFamily="FontAwesome.ot#FontAwesome">
