@@ -31,16 +31,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button 
-                x:Name="Btn_Regresar"
-                Text="Regresar"
-                TextColor="White"
-                VerticalOptions="EndAndExpand"
-                Margin="0,10,0,5"
-                BackgroundColor="#CD0101"
-				CornerRadius="30"
-                Clicked="Btn_Regresar_Clicked">
-            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

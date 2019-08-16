@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AppBancaEnLineaWeb.Models
 {
@@ -17,11 +19,23 @@ namespace AppBancaEnLineaWeb.Models
         /// ¡No usar! Falta la logica de la variable.
         /// </summary>
         /// <see cref="https://github.com/Diegoalru/AppBancaEnLinea/blob/master/AppBancaEnLinea/AppBancaEnLinea/Models/Pago.cs"/>
-        public string PAG_DESCRIPCION_label { get; }
+        public string PAG_DESCRIPCION_label
+        {
+            get
+            {
+                //return $"{Texto()}";
+                return "";
+            }
+        }
+
         #endregion
 
         #region Constructor
-        public Pago(){}
+        public Pago() { }
+
+        /*public Task<string> Texto()
+        {
+        }*/
         #endregion
     }
 }
