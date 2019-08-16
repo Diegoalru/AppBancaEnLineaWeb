@@ -2,21 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLineaWeb.Views.PagoPage"
-             BackgroundColor="#2D3653">
+             BackgroundColor="#1C1C1C">
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="Start">
+        <StackLayout Padding="30">
             <Label Text="Pago de Servicios" 
 				HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
 				TextColor="#FFFFFF" 
 				FontSize="26"
-				FontAttributes="Bold" Margin="40">
+				FontAttributes="Bold" Margin="0,10,0,0">
             </Label>
             <Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
                     FontSize="16"
                     TextColor="#FFFFFF" 
+                    VerticalOptions="Center"
                     TitleColor="#FFFFFF"
-                    
                     ItemDisplayBinding="{Binding SER_DESCRIPCION}"
                     Margin="10">
             </Picker>
@@ -24,6 +25,8 @@
                     Title="Seleccione una cuenta"
                     FontSize="16"
                     TextColor="#FFFFFF" 
+                    TitleColor="#FFFFFF"
+                    VerticalOptions="Center"
                     ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"
                     Margin="10">
             </Picker>
@@ -31,6 +34,8 @@
                 x:Name="Txt_Monto"
                 Placeholder="Ingrese el monto"
                 TextColor="#FFFFFF" 
+                PlaceholderColor="#FFFFFF"
+                VerticalOptions="Center"
                 HorizontalOptions="Fill"
                 Keyboard="Telephone"
                 FontSize="16"
@@ -41,6 +46,7 @@
                 HorizontalOptions="Fill"
                 TextColor="#FFFFFF" 
                 HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
                 FontSize="16"
 				Margin="0,0,0,50"
                 Text="Fecha: ">
@@ -50,7 +56,8 @@
                 Text="Pagar"
                 TextColor="White"
                 CornerRadius="30"
-                BackgroundColor="#61518A"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="#606060"
 				Margin="30, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
