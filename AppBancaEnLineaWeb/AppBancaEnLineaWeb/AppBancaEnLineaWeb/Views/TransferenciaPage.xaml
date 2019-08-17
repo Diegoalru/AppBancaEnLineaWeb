@@ -48,12 +48,13 @@
                 HorizontalOptions="Fill"
                 FontSize="Medium">
             </Entry>
-            <Picker
-                Title="Seleccione un estado"
+            <Entry  
+                x:Name="Txt_Monto"
+                Placeholder="Ingrese el monto"
                 TextColor="#000000"
-                TitleColor="#000000"
+                PlaceholderColor="#000000"
                 VerticalOptions="Center"
-                x:Name="Pkr_Estado"
+                HorizontalTextAlignment="Start"
                 HorizontalOptions="Fill"
                 FontSize="Medium"
 				>
@@ -66,8 +67,7 @@
                 x:Name="Lbl_SaldoDisponible"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill"
-                Text="Saldo Actual de la cuenta: "
-                TextColor="#000000"
+                Text="Prueba"
                 FontSize="Medium">
             </Label>
             <Entry 
@@ -75,7 +75,6 @@
                 Placeholder="Monto"
                 HorizontalTextAlignment="Center"
                 HorizontalOptions="Fill"
-                TextColor="#000000" 
                 FontSize="Medium">
             </Entry>
             <Label
@@ -83,6 +82,7 @@
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Medium"
+                TextColor="#000000"
 				Margin="0,0,0,40"
                 TextColor="#000000"                
                 Text="Fecha: ">
@@ -102,14 +102,7 @@
             </Button>
             <Button
                 Text="Ver Lista de Transferencias"
-                Clicked="Btn_ListaTransferencias"
-                TextColor="#000000"
-                FontSize="Large"
-                BackgroundColor="#EA8B3C"  
-                CornerRadius="100"
-				HorizontalOptions="Center"                    
-                Padding="10"
-                Margin="0, 10, 0, 5">
+                Clicked="Btn_ListaTransferencias">
             </Button>
             <!--BOTONES-->
         </StackLayout>

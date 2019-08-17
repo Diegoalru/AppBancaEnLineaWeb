@@ -12,7 +12,6 @@
                 VerticalOptions="StartAndExpand"
 				TextColor="#000000" 
 				FontSize="26"
-				TextDecorations="Underline"
 				FontAttributes="Bold"
                 Margin="0,20,0,0">
             </Label>

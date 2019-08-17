@@ -137,6 +137,11 @@ namespace AppBancaEnLineaWeb.Views
             Txt_Monto.Text = "";
         }
 
+        private void OnBackPressed()
+        {
+            DisplayAlert("Alerta", "Back Button Pressed Detected", "OK");
+        }
+
         /// <summary>
         /// Verifica que el campo no este vacio o nulo.
         /// </summary>
