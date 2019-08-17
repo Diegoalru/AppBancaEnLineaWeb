@@ -19,7 +19,7 @@ namespace AppBancaEnLineaWeb.Models
                     PAG_CODIGO
                     ,CUE_CODIGO
                     , PAG_MONTO
-                    , PAG_FECHA.ToString("dd/MM/yyyy"));
+                    , PAG_FECHA.ToString("dd/MM/yyyy  hh:mm"));
             }
         }
         #endregion

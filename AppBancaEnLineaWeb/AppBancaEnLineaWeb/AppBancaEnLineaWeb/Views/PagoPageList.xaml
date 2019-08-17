@@ -31,6 +31,14 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
+            <Button 
+					Image="actualizar.png"
+                    Padding="15"
+                    BackgroundColor="Beige"  
+                    CornerRadius="50"
+					HorizontalOptions="End"
+                    Clicked="Btn_RefrescarPantalla"
+                    Margin="15, 0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

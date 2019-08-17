@@ -10,7 +10,8 @@
 
     <local:MainPage></local:MainPage>
     <local:PagoPage></local:PagoPage>
-    <local:PagoPageList></local:PagoPageList>
+    <local:PagoPageList>
+    </local:PagoPageList>
     <local:TransferenciaPage></local:TransferenciaPage>
     <local:UsuarioPage></local:UsuarioPage>
 

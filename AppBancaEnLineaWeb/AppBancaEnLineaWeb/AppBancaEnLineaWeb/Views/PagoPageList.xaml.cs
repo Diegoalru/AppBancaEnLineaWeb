@@ -52,5 +52,10 @@ namespace AppBancaEnLineaWeb.Views
             Application.Current.MainPage = new MainTabbedPage();
         }
         #endregion
+
+        private void Btn_RefrescarPantalla(object sender, EventArgs e)
+        {
+            CargaDatos();
+        }
     }
 }
