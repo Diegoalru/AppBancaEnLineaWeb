@@ -39,10 +39,7 @@ namespace AppBancaEnLineaWeb
         {
 
         }
-
-        /* FIXME:
-         * Inicio de sesión.
-         */
+        
         /// <summary>
         /// Inicio de sesión.
         /// </summary>
@@ -75,7 +72,6 @@ namespace AppBancaEnLineaWeb
                         {
                             var jwthandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
                             App.usuarioActual.Token = jwthandler.ReadToken(App.usuarioActual.TOKEN);
-                            //Application.Current.MainPage = new MainPage();
                             Application.Current.MainPage = new MainTabbedPage();
                         }
                         else
@@ -131,7 +127,9 @@ namespace AppBancaEnLineaWeb
         [Obsolete("No usar hasta no obtener la URL del API para crear usuarios", true)]
         private void Btn_Register_Clicked(object sender, EventArgs e)
         {
-
+            /*
+             * CODE
+             */
         }
         #endregion
     }
