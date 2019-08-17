@@ -48,47 +48,37 @@
                 HorizontalOptions="Fill"
                 FontSize="Medium">
             </Entry>
-            <Picker
-                Title="Seleccione un estado"
+            <Entry  
+                x:Name="Txt_Monto"
+                Placeholder="Ingrese el monto"
                 TextColor="#000000"
-                TitleColor="#000000"
+                PlaceholderColor="#000000"
                 VerticalOptions="Center"
-                x:Name="Pkr_Estado"
+                HorizontalTextAlignment="Start"
                 HorizontalOptions="Fill"
                 FontSize="Medium"
-				>
-                <Picker.Items>
-                    <x:String>Activo</x:String>
-                    <x:String>Inactivo</x:String>
-                </Picker.Items>
-            </Picker>
-            <Label
-                x:Name="Lbl_SaldoDisponible"
-                HorizontalTextAlignment="Center"
-                HorizontalOptions="Fill"
-                Text="Prueba"
-                FontSize="Medium">
-            </Label>
-            <Entry 
-                x:Name="Txt_Saldo"
-                Placeholder="Monto"
-                HorizontalTextAlignment="Center"
-                HorizontalOptions="Fill"
-                FontSize="Medium">
+                Keyboard="Telephone">
             </Entry>
             <Label
                 x:Name="Lbl_Date"
                 HorizontalOptions="Fill"
                 HorizontalTextAlignment="Center"
                 FontSize="Medium"
+                TextColor="#000000"
 				Margin="0,0,0,40"
                 Text="Fecha: ">
             </Label>
             <!--END MAIN-->
             <!--BOTONES-->
-            <Button
-                Text="Ver Lista de Transferencias"
-                Clicked="Btn_ListaTransferencias">
+            <Button 
+                x:Name="Btn_Transferir"
+                Text="Transferir"
+                TextColor="#000000"
+                CornerRadius="30"
+                VerticalOptions="EndAndExpand"
+                BackgroundColor="#EA8B3C"
+                Margin="30, 0"
+                Clicked="Btn_Transferir_Clicked">
             </Button>
             <!--BOTONES-->
         </StackLayout>

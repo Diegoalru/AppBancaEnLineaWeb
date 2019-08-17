@@ -21,5 +21,11 @@ namespace AppBancaEnLineaWeb.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
+
+        public override void OnBackPressed()
+        {
+            Toast.MakeText(this, "Back Button Pressed Detected", ToastLength.Show());
+        }
     }
+    
 }

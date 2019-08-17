@@ -84,6 +84,7 @@ namespace AppBancaEnLineaWeb.Views
             Application.Current.MainPage = new MainTabbedPage();
         }
 
+
         /// <summary>
         /// Actualizar una cuenta.
         /// </summary>
