@@ -15,8 +15,9 @@ namespace AppBancaEnLineaWeb.Models
         {
             get
             {
-                return string.Format("Cuenta: {0} | Monto: {1:N2} | Fecha: {2}",
-                    CUE_CODIGO
+                return string.Format("Pago #{0} | Cuenta: {1} | Monto: {2:N2} | Fecha: {3}",
+                    PAG_CODIGO
+                    ,CUE_CODIGO
                     , PAG_MONTO
                     , PAG_FECHA.ToString("dd/MM/yyyy"));
             }
