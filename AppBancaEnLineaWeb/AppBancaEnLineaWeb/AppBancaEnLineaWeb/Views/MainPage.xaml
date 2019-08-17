@@ -7,6 +7,13 @@
              Icon="MainPageWhite.xml">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
+            <Label 
+                Text="Cuentas" 
+				HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
+				TextColor="#000000" 
+				FontSize="26"
+				FontAttributes="Bold" Margin="0,20,0,0"/>
             <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -64,10 +71,7 @@
                     VerticalOptions="End"
                     Clicked="Btn_RefrescarPantalla"
                     Margin="0,0,0,0"/>
-
             </Grid>
-            
         </StackLayout>
     </ContentPage.Content>
-    
 </ContentPage>

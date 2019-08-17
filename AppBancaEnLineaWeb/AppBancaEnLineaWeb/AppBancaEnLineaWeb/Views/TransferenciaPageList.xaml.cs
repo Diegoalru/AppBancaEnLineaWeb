@@ -17,6 +17,46 @@ namespace AppBancaEnLineaWeb.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TransferenciaPageList : ContentPage
 	{
-        
+        #region Variables
+        private TransferenciasManager transferenciasManager = new TransferenciasManager();
+        #endregion
+
+        #region Constructor
+        public TransferenciaPageList()
+        {
+            InitializeComponent();
+            CargaDatos();
+        }
+        #endregion
+
+
+        #region Metodos
+        private async void CargaDatos()
+        {
+            try
+            {
+                //Obtenermos la lista de las cuentas del usuario.
+                IEnumerable<Transferencia> transferencias = await transferenciasManager.ObtenerTransferencias(App.usuarioActual.USU_CODIGO.ToString());
+                TransferenciaList.ItemsSource = transferencias;
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Error", "Ha ocurrido un error al mostrar las transferencias.", "OK");
+            }
+        }
+
+        /// <summary>
+        /// Boton para regresar a la pantalla de TransferenciaPage.
+        /// </summary>
+        private void Btn_Regresar_Clicked(object sender, EventArgs e)
+        {
+            App.Current.MainPage = new MainTabbedPage();
+        }
+        #endregion
+
+        private void Btn_RefrescarPantalla(object sender, EventArgs e)
+        {
+            CargaDatos();
+        }
     }
 }

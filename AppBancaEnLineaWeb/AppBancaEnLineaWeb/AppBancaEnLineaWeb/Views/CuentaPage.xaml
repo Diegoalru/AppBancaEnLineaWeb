@@ -75,8 +75,8 @@
 					CornerRadius="30"
                     FontSize="Medium"
                     VerticalOptions="EndAndExpand"
-                    TextColor="#000000"
-                    BackgroundColor="#EA8B3C"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="Green"
                     Clicked="AgregarTapped"></Button>
             <Button x:Name="Btn_Modificar"
                     Text="Modificar"
@@ -87,7 +87,7 @@
                     BackgroundColor="#606060"
                     Clicked="ActualizarTapped"></Button>
             <Button Text="Regresar"
-                    TextColor="#000000"
+                    TextColor="#FFFFFF"
                     VerticalOptions="End"
 					CornerRadius="30"
                     FontSize="Medium"

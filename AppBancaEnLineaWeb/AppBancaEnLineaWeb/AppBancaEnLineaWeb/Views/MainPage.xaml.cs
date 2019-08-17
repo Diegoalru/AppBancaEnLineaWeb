@@ -123,6 +123,7 @@ namespace AppBancaEnLineaWeb.Views
         [Obsolete("Este metodo no se usa por falta del botón en el MainPage.", false)]
         private void Btn_RefrescarPantalla(object sender, EventArgs e)
         {
+            CargarCuentas();
         }
         #endregion
 
