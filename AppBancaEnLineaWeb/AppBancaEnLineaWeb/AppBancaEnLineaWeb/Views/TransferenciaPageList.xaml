@@ -30,10 +30,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button
-                Text="Ver Lista de Transferencias"
-                Clicked="Btn_Volver"
-                ></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
