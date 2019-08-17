@@ -31,7 +31,7 @@ namespace AppBancaEnLineaWeb.Views
             Lbl_Nombre.Text += ": " + manager.USU_NOMBRE;
             Lbl_Cedula.Text += ": " + manager.USU_IDENTIFICACION;
             Lbl_Correo.Text += ": " + manager.USU_EMAIL;
-            Lbl_Date.Text = "Fecha Nacimiento: " + DateTime.Now.Date.ToShortDateString();
+            Lbl_Date.Text = "Fecha Nacimiento: " + manager.USU_FEC_NAC.ToShortDateString();
         }
 
         /// <summary>
@@ -41,6 +41,27 @@ namespace AppBancaEnLineaWeb.Views
         {
             App.usuarioActual = null;
             Application.Current.MainPage = new LoginPage();
+        }
+
+        /// <summary>
+        /// Cierra la sesión actual.
+        /// </summary>
+        public async void CerrarSesionTapped(object sender, EventArgs e)
+        {
+            try
+            {
+                bool respuesta = await DisplayAlert("Cerrar Sesión", "¿Desea cerrar la sesión?", "Aceptar", "Cancelar");
+                if (respuesta)
+                {
+                    Application.Current.MainPage = new LoginPage();
+                    App.usuarioActual = null;
+                }
+                else { /* No hacer codigo aqui. */ }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+            }
         }
     }
 }

@@ -19,7 +19,7 @@
                 x:Name="Lbl_Title"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand"/>
-            <ListView x:Name="PagoList" BackgroundColor="#545C73" Grid.Row="4" SeparatorVisibility="Default">
+            <ListView x:Name="TransferenciaList" BackgroundColor="#545C73" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
