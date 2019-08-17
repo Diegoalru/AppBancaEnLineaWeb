@@ -58,6 +58,15 @@
                 HorizontalOptions="Fill"
                 FontSize="Medium"
 				>
+            </Entry>
+            <Picker
+                Title="Seleccione un estado"
+                TextColor="#000000"
+                TitleColor="#000000"
+                VerticalOptions="Center"
+                x:Name="Pkr_Estado"
+                HorizontalOptions="Fill"
+                FontSize="Medium">
                 <Picker.Items>
                     <x:String>Activo</x:String>
                     <x:String>Inactivo</x:String>
@@ -84,7 +93,6 @@
                 FontSize="Medium"
                 TextColor="#000000"
 				Margin="0,0,0,40"
-                TextColor="#000000"                
                 Text="Fecha: ">
             </Label>
             <!--END MAIN-->

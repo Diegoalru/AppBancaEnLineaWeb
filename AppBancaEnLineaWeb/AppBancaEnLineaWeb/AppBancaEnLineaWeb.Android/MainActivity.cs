@@ -24,7 +24,7 @@ namespace AppBancaEnLineaWeb.Droid
 
         public override void OnBackPressed()
         {
-            Toast.MakeText(this, "Back Button Pressed Detected", ToastLength.Show());
+            //Toast.MakeText(this, "Back Button Pressed Detected", ToastLength.Show());
         }
     }
     

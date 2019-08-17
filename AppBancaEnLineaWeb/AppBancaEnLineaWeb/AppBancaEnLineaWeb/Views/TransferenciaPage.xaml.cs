@@ -169,7 +169,7 @@ namespace AppBancaEnLineaWeb.Views
                     await DisplayAlert("Alerta", "Verifique los datos.", "OK");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 //await DisplayAlert("Error", ex.Message, "OK");
                 await DisplayAlert("Error", "Error al crear transferencia.", "OK");
