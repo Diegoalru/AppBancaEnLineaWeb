@@ -21,6 +21,7 @@ namespace AppBancaEnLineaWeb.Views
         private List<Servicio> serviciosList = new List<Servicio>();
         private CuentaManager cuentaManager = new CuentaManager();
         private ServiciosManager serviciosManager = new ServiciosManager();
+        private PagoManager pagoManager = new PagoManager();
         #endregion
 
         public PagoPage()
@@ -49,14 +50,82 @@ namespace AppBancaEnLineaWeb.Views
             Pkr_Cuentas.ItemsSource = cuentasList;
         }
 
-        private void Btn_Volver_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new MainPage();
-        }
 
-        private void Btn_Pagar_Clicked(object sender, EventArgs e)
+        private async void Btn_Pagar_Clicked(object sender, EventArgs e)
         {
-            //CODE
+            try
+            {
+                int indexCuenta = Pkr_Cuentas.SelectedIndex;
+                int indexServicio = Pkr_Servicios.SelectedIndex;
+                bool BCuenta = true;
+                bool BServicio = true;
+
+                if (indexCuenta == -1)
+                {
+                    BCuenta = false;
+                    await DisplayAlert("Alerta", "Debes seleccionar una cuenta.", "OK");
+                }
+
+                if (indexServicio == -1)
+                {
+                    BServicio = false;
+                    await DisplayAlert("Alerta", "Debes seleccionar un servicio.", "OK");
+                }
+
+                if (BCuenta && BServicio)
+                {
+                    if (!VerificaCampo(Txt_Monto.Text))
+                    {
+                        decimal monto = Convert.ToDecimal(Txt_Monto.Text);
+                        decimal montoFinal = cuentasList[indexCuenta].CUE_SALDO - monto;
+                        if (monto > 0)
+                        {
+
+                            if (montoFinal >= 0)
+                            {
+                                Pago pago = new Pago()
+                                {
+                                    PAG_CODIGO = 1,
+                                    CUE_CODIGO = cuentasList[indexCuenta].CUE_CODIGO,
+                                    SER_CODIGO = serviciosList[indexServicio].SER_CODIGO,
+                                    PAG_MONEDA = cuentasList[indexCuenta].CUE_MONEDA,
+                                    PAG_MONTO = monto,
+                                    PAG_FECHA = DateTime.Now
+                                };
+                                string signo = cuentasList[indexCuenta].CUE_MONEDA.Trim().Equals("DOL") ? "$" : cuentasList[indexCuenta].CUE_MONEDA.Trim().Equals("COL") ? "₡" : "€";
+                                string msj = string.Format("Comprobación:\nServicio: {0}\nCuenta: {1}\nMonto: {2}{3:N2}\nSaldo despues del pago: {2}{4:N2}", serviciosList[indexServicio].SER_DESCRIPCION, pago.CUE_CODIGO, signo, pago.PAG_MONTO, montoFinal);
+
+                                bool respuesta = await DisplayAlert("Comprobación:", msj, "OK", "Cancelar");
+                                if (respuesta)
+                                {
+                                    Cuenta cuenta = cuentasList[indexCuenta];
+                                    cuenta.CUE_SALDO -= monto;
+                                    await cuentaManager.ActualizarCuenta(cuenta);
+                                    await pagoManager.AgregarPago(pago);
+                                    await DisplayAlert("Pago", "Pago completado.", "OK");
+                                    Limpiar();
+                                }
+                            }
+                            else
+                            {
+                                await DisplayAlert("Error", "Dinero insuficiente.\n", "OK");
+                            }
+                        }
+                        else
+                        {
+                            await DisplayAlert("Alerta", "Debes indicar un monto valido.", "OK");
+                        }
+                    }
+                    else
+                    {
+                        await DisplayAlert("Alerta", "Debes indicar el monto a pagar.", "OK");
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Error", "Error al crear pago.", "OK");
+            }
         }
 
 
@@ -79,6 +148,12 @@ namespace AppBancaEnLineaWeb.Views
                 return true;
 
             return false;
+        }
+
+        [Obsolete("Boton en desuso, gracias al TabbedPage.", false)]
+        private void Btn_Volver_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new MainPage();
         }
     }
 }
