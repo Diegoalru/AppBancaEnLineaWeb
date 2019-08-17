@@ -6,7 +6,9 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             xmlns:local="clr-namespace:AppBancaEnLineaWeb.Views"
             BarBackgroundColor="#3D2E55"
-            BarTextColor="White">
+            BarTextColor="White"
+            SelectedTabColor="White"
+            UnselectedTabColor="White">
 
     <local:MainPage></local:MainPage>
     <local:PagoPage></local:PagoPage>

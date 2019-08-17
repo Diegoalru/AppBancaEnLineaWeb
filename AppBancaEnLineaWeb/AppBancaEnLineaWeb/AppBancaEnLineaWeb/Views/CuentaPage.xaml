@@ -37,6 +37,7 @@
                    Placeholder="Ingrese el saldo"
                    HorizontalTextAlignment="Start"
                    VerticalOptions="Center"
+                   Keyboard="Numeric"
                    TextColor="#000000"
                    PlaceholderColor="#000000"
                    HorizontalOptions="Fill"
