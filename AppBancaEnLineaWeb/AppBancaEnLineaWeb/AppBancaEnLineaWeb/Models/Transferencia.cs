@@ -33,9 +33,10 @@ namespace AppBancaEnLineaWeb.Models
         }
         #endregion
 
-        #region Constructor
-        public Transferencia()
-        {   }
+#region Constructor
+public Transferencia()
+        {
+        }
         #endregion
     }
 }

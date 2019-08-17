@@ -88,6 +88,7 @@
                            Clicked="Btn_Login_Clicked" FontAttributes="Bold"
                            FontFamily="FontAwesome.ot#FontAwesome">
                     </Button>
+                    <!--
                     <Button x:Name="Btn_Register" 
                            Grid.Row="5"
                            Grid.Column="1"
@@ -98,7 +99,7 @@
 						   BackgroundColor="Transparent"
                            CornerRadius="10" 
                            Clicked="Btn_Register_Clicked" 
-                           FontAttributes="Bold"></Button>
+                           FontAttributes="Bold"></Button>-->
                 <!--<Button x:Name="Btn_Agregar" 
                         Text="Agregar Usuario" 
                         BorderColor="Navy" 

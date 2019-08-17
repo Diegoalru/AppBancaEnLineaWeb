@@ -40,8 +40,9 @@
                     HeightRequest="30"
                     BackgroundColor="Beige"  
                     CornerRadius="100"
-					HorizontalOptions="End"
+					HorizontalOptions="Center"
                     Clicked="Btn_RefrescarPantalla"
+                    Padding="1"
                     Margin="0, 10, 0, 5"/>
         </StackLayout>
     </ContentPage.Content>

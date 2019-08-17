@@ -4,15 +4,33 @@
              x:Class="AppBancaEnLineaWeb.Views.ResumePage">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Por motivos de seguridad, vuelva a iniciar la sesión."
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-            <Button Text="Volver"
+			<Image x:Name="LogoUlacit" 
+						   Margin="0,50,0,0"
+                           HorizontalOptions="Center" 
+                           Source="seguri.png"
+                           WidthRequest="130"
+                           VerticalOptions="Start"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3" 
+                           ></Image>
+			<Label Text="¡UPSSS! Tu sesión ha expirado"
+				Margin="0,100,0,0"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+				TextColor="Black"/>
+			<Label Text="Por motivos de seguridad, debes volver a iniciar la sesión."
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" />
+			<Button Text="Volver al Inicio de Sesión"
                     x:Name="Btn_Resume"
-                        BorderColor="Navy" 
-                        BackgroundColor="Navy" 
-                        TextColor="Silver" 
-                        CornerRadius="10"
+						Margin="0,50,0,0"
+                        BorderColor="#434343" 
+                        BackgroundColor="#DAE8D5" 
+                        TextColor="#030202" 
+						VerticalOptions="Center"
+						HorizontalOptions="Center"
+                        CornerRadius="50"
                         Clicked="Btn_Resume_Clicked">
             </Button>
         </StackLayout>

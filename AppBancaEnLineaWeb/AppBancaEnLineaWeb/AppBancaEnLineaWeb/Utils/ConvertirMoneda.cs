@@ -5,8 +5,15 @@ using System.Text;
 
 namespace AppBancaEnLineaWeb.Utils
 {
-    class ConverMoneda
+    class ConvertirMoneda
     {
+        /// <summary>
+        /// Convierte el saldo de
+        /// </summary>
+        /// <param name="amount"></param>
+        /// <param name="fromCurrency"></param>
+        /// <param name="toCurrency"></param>
+        /// <returns></returns>
         public string CurrencyConversion(decimal amount, string fromCurrency, string toCurrency)
         {
             string Output = "";
@@ -29,7 +36,5 @@ namespace AppBancaEnLineaWeb.Utils
      
             return Output;
         }
-
-
     }
 }

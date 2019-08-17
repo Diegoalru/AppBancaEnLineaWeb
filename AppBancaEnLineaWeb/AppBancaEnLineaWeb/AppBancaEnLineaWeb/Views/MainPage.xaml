@@ -7,6 +7,13 @@
              Icon="MainPageWhite.xml">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
+            <Label 
+                Text="Cuentas" 
+				HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
+				TextColor="#000000" 
+				FontSize="26"
+				FontAttributes="Bold" Margin="0,20,0,0"/>
             <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -23,9 +30,10 @@
                     <RowDefinition Height="AUTO"  />
                 </Grid.RowDefinitions>
                 <Button Grid.Column="0"                     
-                    Image="anadir.png"
-					Padding="15"
-                    BackgroundColor="#C0C0C0"
+                    Image="outline_add_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF"
                     HorizontalOptions="Start"
                     CornerRadius="50"
 					Margin="0,0,0,0"
@@ -33,8 +41,9 @@
                     Clicked="AgregarTapped"/>
                 <Button Grid.Column="1" 
 					Image="ConfigureBlack.xml"
-					Padding="15"
-                    BackgroundColor="#C0C0C0"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF"
                     HorizontalOptions="Center"
                     FontSize="Small"
 					Margin="0,0,0,0"
@@ -42,28 +51,27 @@
                     VerticalOptions="End"
                     Clicked="ModificarTapped"/>
                 <Button Grid.Column="2"                     
-                    Image="eliminar.png"
-					Padding="15"
+                    Image="outline_delete_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
 					FontAttributes="Bold"
-                    BackgroundColor="#C0C0C0"
+				    BackgroundColor="#FFFFFF"
                     CornerRadius="50"
 					Margin="0,0,0,0"
                     VerticalOptions="End"
                     HorizontalOptions="End"
                     Clicked="EliminarTapped"/>
                 <Button Grid.Column="3" 
-					Image="transferencia.png"
-					Padding="15"
-                    BackgroundColor="#C0C0C0"  
+					Image="outline_restore_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF" 
                     CornerRadius="50"
 					HorizontalOptions="End"
                     VerticalOptions="End"
                     Clicked="Btn_RefrescarPantalla"
                     Margin="0,0,0,0"/>
-
             </Grid>
-            
         </StackLayout>
     </ContentPage.Content>
-    
 </ContentPage>
