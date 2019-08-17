@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AppBancaEnLineaWeb.Utils
 {
-    class ConverMoneda
+    class ConvertirMoneda
     {
         public string CurrencyConversion(decimal amount, string fromCurrency, string toCurrency)
         {
