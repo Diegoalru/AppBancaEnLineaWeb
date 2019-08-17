@@ -37,7 +37,6 @@ namespace AppBancaEnLineaWeb.Views
                 //Obtenermos la lista de las cuentas del usuario.
                 IEnumerable<Pago> pagos = await pagoManager.ObtenerPagos(App.usuarioActual.USU_CODIGO.ToString());
                 PagoList.ItemsSource = pagos;
-                PagoList.BindingContext = pagos;
             }
             catch (Exception)
             {
@@ -53,5 +52,10 @@ namespace AppBancaEnLineaWeb.Views
             Application.Current.MainPage = new MainTabbedPage();
         }
         #endregion
+
+        private void Btn_RefrescarPantalla(object sender, EventArgs e)
+        {
+            CargaDatos();
+        }
     }
 }
