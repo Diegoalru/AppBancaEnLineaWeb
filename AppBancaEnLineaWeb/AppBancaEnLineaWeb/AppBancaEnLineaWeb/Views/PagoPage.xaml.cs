@@ -44,12 +44,6 @@ namespace AppBancaEnLineaWeb.Views
             //Lista de las cuentas del usuario.
             foreach (var item in cuentas)
             {
-                /*
-                if (item.USU_CODIGO == App.repositorioUsuario.GetUsuario().USU_CODIGO)
-                {
-                    IEnumerable<Cuenta> cuentas = await cuentaManager.GetCuentas(App.usuarioActual.USU_CODIGO.ToString());
-                }
-                */
                 cuentasList.Add(item);
             }
             Pkr_Cuentas.ItemsSource = cuentasList;
