@@ -45,9 +45,8 @@ namespace AppBancaEnLineaWeb.Views
                 TransferenciaList.ItemsSource = transferenciasList;
                 TransferenciaList.BindingContext = transferenciasList;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                await DisplayAlert("Error", e.Message, "OK");
                 await DisplayAlert("Error", "Ha ocurrido un error al mostrar las transferencias.", "OK");
             }
         }

@@ -90,6 +90,17 @@
             <!--END MAIN-->
             <!--BOTONES-->
             <Button
+                Text="Transferir"
+                Clicked="CrearTranferencia"
+                TextColor="#000000"
+                FontSize="Large"
+                BackgroundColor="Green"  
+                CornerRadius="100"
+				HorizontalOptions="Center"                    
+                Padding="10"
+                Margin="0, 10, 0, 5">
+            </Button>
+            <Button
                 Text="Ver Lista de Transferencias"
                 Clicked="Btn_ListaTransferencias"
                 TextColor="#000000"
