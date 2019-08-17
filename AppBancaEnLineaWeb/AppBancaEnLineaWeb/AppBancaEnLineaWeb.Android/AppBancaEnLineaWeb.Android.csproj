@@ -180,5 +180,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\outline_restore_24.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\seguri.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
