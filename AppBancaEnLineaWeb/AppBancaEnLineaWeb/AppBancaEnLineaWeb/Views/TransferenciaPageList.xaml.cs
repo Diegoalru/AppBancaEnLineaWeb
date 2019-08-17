@@ -19,6 +19,7 @@ namespace AppBancaEnLineaWeb.Views
 	{
         #region Variables
         private TransferenciasManager transferenciasManager = new TransferenciasManager();
+        private List<Transferencia> transferenciasList = new List<Transferencia>();
         #endregion
 
         #region Constructor
@@ -36,11 +37,17 @@ namespace AppBancaEnLineaWeb.Views
             try
             {
                 //Obtenermos la lista de las cuentas del usuario.
-                IEnumerable<Transferencia> transferencias = await transferenciasManager.ObtenerTransferencias(App.usuarioActual.USU_CODIGO.ToString());
-                TransferenciaList.ItemsSource = transferencias;
+                IEnumerable<Transferencia> transferencias = await transferenciasManager.ObtenerTransferencias();
+                foreach (var item in transferencias)
+                {
+                    transferenciasList.Add(item);
+                }
+                TransferenciaList.ItemsSource = transferenciasList;
+                TransferenciaList.BindingContext = transferenciasList;
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                await DisplayAlert("Error", e.Message, "OK");
                 await DisplayAlert("Error", "Ha ocurrido un error al mostrar las transferencias.", "OK");
             }
         }

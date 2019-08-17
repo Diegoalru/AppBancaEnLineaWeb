@@ -11,7 +11,7 @@ namespace AppBancaEnLineaWeb.Models
         public int CUE_ORIGEN { get; set; }
         public int CUE_DSTINO { get; set; }
         public string TRA_DESCRIPCION { get; set; }
-        public char TRA_ESTADO { get; set; }
+        public string TRA_ESTADO { get; set; }
         public DateTime TRA_FECHA { get; set; }
         public decimal TRA_MONTO_ORIGEN { get; set; }
         public decimal TRA_MONTO_FINAL { get; set; }
@@ -19,13 +19,12 @@ namespace AppBancaEnLineaWeb.Models
         {
             get
             {
-                return string.Format("Transferencia #{0}" //| Cuenta Origen #{1} | Cuenta Destino: #{2} | Monto: {3:N2}" // | Fecha: {4}",
-                    , TRA_CODIGO);
-                /*, CUE_ORIGEN
+                return string.Format("Transferencia #{0} | Cuenta Origen #{1} | Cuenta Destino: #{2} | Monto: {3:N2} | Fecha: {4}"
+                , TRA_CODIGO
+                , CUE_ORIGEN
                 , CUE_DSTINO
-                , TRA_MONTO_FINAL);
-                //, TRA_FECHA.ToString("dd/MM/yyyy"));
-                */
+                , TRA_MONTO_FINAL
+                , TRA_FECHA.ToString("dd/MM/yyyy"));
             }
         }
         #endregion
