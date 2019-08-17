@@ -5,14 +5,15 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             xmlns:local="clr-namespace:AppBancaEnLineaWeb.Views"
-            BarBackgroundColor="#2196F3"
+            BarBackgroundColor="#3D2E55"
             BarTextColor="White">
 
-    <local:UsuarioPage></local:UsuarioPage>
     <local:MainPage></local:MainPage>
     <local:PagoPage></local:PagoPage>
-    <local:PagoPageList></local:PagoPageList>
+    <local:PagoPageList>
+    </local:PagoPageList>
     <local:TransferenciaPage></local:TransferenciaPage>
+    <local:UsuarioPage></local:UsuarioPage>
 
     <!--
     1- Informacion Usuario PONER LO DE CERRAR SESION

@@ -3,8 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLineaWeb.Views.MainPage"
              Title="MainPage"
-             Icon="round_account_balance_24.xml">
-    
+             BackgroundColor="#5D5D5D"
+             Icon="MainPageWhite.xml">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
             <Label x:Name="Lbl_Username" Text="" HorizontalOptions="End"></Label>

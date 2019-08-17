@@ -22,6 +22,7 @@ namespace AppBancaEnLineaWeb.Views
         /// </summary>
         private void Btn_Resume_Clicked(object sender, EventArgs e)
         {
+            App.usuarioActual = null;
             Application.Current.MainPage = new LoginPage();
         }
     }

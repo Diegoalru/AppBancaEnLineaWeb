@@ -1,39 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancaEnLineaWeb.Views.PagoPageList">
+             x:Class="AppBancaEnLineaWeb.Views.PagoPageList"
+             BackgroundColor="#FFFFFF"
+             Title="Lista"
+             Icon="round_account_balance_24.xml">
     <ContentPage.Content>
-        <StackLayout HorizontalOptions="Center" Padding="30">
+        <StackLayout Padding="25">
             <Label Text="Pagos Realizados" 
 				HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
 				TextColor="#000000" 
 				FontSize="26"
 				TextDecorations="Underline"
-				FontAttributes="Bold" Margin="40">
+				FontAttributes="Bold" Margin="0,20,0,0">
             </Label>
             <Label
                 x:Name="Lbl_Title"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
-            <ListView x:Name="PagoList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default">
+                HorizontalOptions="CenterAndExpand">
+            </Label>
+                <ListView x:Name="PagoList" BackgroundColor="#FFFFFF" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
                             <StackLayout Padding="5">
-                                <Label Text="{Binding PAG_DESCRIPCION_label}"></Label>
+                                <Label 
+                                    Text="{Binding PAG_DESCRIPCION_label}"
+                                    TextColor="#000000"
+                                    FontSize="Medium"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <Button 
-                x:Name="Btn_Regresar"
-                Text="Regresar"
-                TextColor="White"
-                BackgroundColor="Teal"
-				CornerRadius="30"
-                Clicked="Btn_Regresar_Clicked">
-            </Button>
+					Image="actualizar.png"
+                    Padding="15"
+                    BackgroundColor="Beige"  
+                    CornerRadius="50"
+					HorizontalOptions="End"
+                    Clicked="Btn_RefrescarPantalla"
+                    Margin="15, 0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
