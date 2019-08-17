@@ -33,5 +33,14 @@ namespace AppBancaEnLineaWeb.Views
             Lbl_Correo.Text += ": " + manager.USU_EMAIL;
             Lbl_Date.Text = "Fecha Nacimiento: " + DateTime.Now.Date.ToShortDateString();
         }
+
+        /// <summary>
+        /// Volver al Login.
+        /// </summary>
+        private void Btn_Resume_Clicked(object sender, EventArgs e)
+        {
+            App.usuarioActual = null;
+            Application.Current.MainPage = new LoginPage();
+        }
     }
 }
