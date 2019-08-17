@@ -4,13 +4,13 @@
              x:Class="AppBancaEnLineaWeb.Views.CuentaPage"
              Title="Cuenta"
              Icon="PaymentsWhite.xml"
-             BackgroundColor="#1C1C1C">
+             BackgroundColor="#FFFFFF">
     <ContentPage.Content>
         <StackLayout Padding="30" >
             <Label Text="Cuenta Bancaria" 
 				HorizontalOptions="Center"
                 VerticalOptions="StartAndExpand"
-				TextColor="#FFFFFF" 
+				TextColor="#000000" 
 				FontSize="26"
 				TextDecorations="Underline"
 				FontAttributes="Bold"
@@ -20,7 +20,7 @@
                    Placeholder="Ingrese el código"
                    HorizontalTextAlignment="Center"
                    VerticalOptions="Center"
-                   TextColor="#FFFFFF"
+                   TextColor="#000000"
                    HorizontalOptions="Fill"
                    FontSize="Medium">
             </Entry>
@@ -28,8 +28,8 @@
                    Placeholder="Ingrese la descripción"
                    HorizontalTextAlignment="Start"
                    VerticalOptions="Center"
-                   TextColor="#FFFFFF"
-                   PlaceholderColor="#FFFFFF"
+                   TextColor="#000000"
+                   PlaceholderColor="#000000"
                    HorizontalOptions="Fill"
                    FontSize="Medium">
             </Entry>
@@ -37,17 +37,17 @@
                    Placeholder="Ingrese el saldo"
                    HorizontalTextAlignment="Start"
                    VerticalOptions="Center"
-                   TextColor="#FFFFFF"
-                   PlaceholderColor="#FFFFFF"
+                   TextColor="#000000"
+                   PlaceholderColor="#000000"
                    HorizontalOptions="Fill"
                    FontSize="Medium">
             </Entry>
             <Picker Title="Seleccione un tipo de moneda"
                     x:Name="Pkr_Moneda"
 					HorizontalOptions="Fill"
-                    TitleColor="#FFFFFF"
+                    TitleColor="#000000"
                     VerticalOptions="Center"
-                    TextColor="#FFFFFF"
+                    TextColor="#000000"
                     FontSize="Medium">
                 <Picker.Items>
                     <x:String>DOLARES</x:String>
@@ -58,9 +58,9 @@
             <Picker Title="Seleccione un estado"
                     x:Name="Pkr_Estado"
                     FontSize="Medium"
-                    TitleColor="#FFFFFF"
+                    TitleColor="#000000"
                     VerticalOptions="Center"
-                    TextColor="#FFFFFF"
+                    TextColor="#000000"
 					Margin="0, 0, 0, 0"
 					>
                 <Picker.Items>
@@ -74,8 +74,8 @@
 					CornerRadius="30"
                     FontSize="Medium"
                     VerticalOptions="EndAndExpand"
-                    TextColor="#FFFFFF"
-                    BackgroundColor="#6C6C6C"
+                    TextColor="#000000"
+                    BackgroundColor="#EA8B3C"
                     Clicked="AgregarTapped"></Button>
             <Button x:Name="Btn_Modificar"
                     Text="Modificar"
@@ -86,7 +86,7 @@
                     BackgroundColor="#606060"
                     Clicked="ActualizarTapped"></Button>
             <Button Text="Regresar"
-                    TextColor="#FFFFFF"
+                    TextColor="#000000"
                     VerticalOptions="End"
 					CornerRadius="30"
                     FontSize="Medium"

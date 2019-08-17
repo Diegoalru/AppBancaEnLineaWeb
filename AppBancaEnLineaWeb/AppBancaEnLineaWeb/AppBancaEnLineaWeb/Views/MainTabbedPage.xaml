@@ -5,7 +5,7 @@
             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
             android:TabbedPage.ToolbarPlacement="Bottom"
             xmlns:local="clr-namespace:AppBancaEnLineaWeb.Views"
-            BarBackgroundColor="#5A5A5A"
+            BarBackgroundColor="#3D2E55"
             BarTextColor="White">
 
     <local:MainPage></local:MainPage>

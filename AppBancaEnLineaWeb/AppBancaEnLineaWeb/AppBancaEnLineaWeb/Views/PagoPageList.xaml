@@ -2,13 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLineaWeb.Views.PagoPageList"
-             BackgroundColor="#1C1C1C">
+             BackgroundColor="#FFFFFF"
+             Title="Lista"
+             Icon="round_account_balance_24.xml">
     <ContentPage.Content>
         <StackLayout Padding="25">
             <Label Text="Pagos Realizados" 
 				HorizontalOptions="Center" 
                 VerticalOptions="StartAndExpand"
-				TextColor="#FFFFFF" 
+				TextColor="#000000" 
 				FontSize="26"
 				TextDecorations="Underline"
 				FontAttributes="Bold" Margin="0,20,0,0">
@@ -16,15 +18,16 @@
             <Label
                 x:Name="Lbl_Title"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand"/>
-            <ListView x:Name="PagoList" BackgroundColor="#323232" Grid.Row="4" SeparatorVisibility="Default">
+                HorizontalOptions="CenterAndExpand">
+            </Label>
+                <ListView x:Name="PagoList" BackgroundColor="#FFFFFF" Grid.Row="4" SeparatorVisibility="Default">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell Height="30">
                             <StackLayout Padding="5">
                                 <Label 
                                     Text="{Binding PAG_DESCRIPCION_label}"
-                                    TextColor="#FFFFFF"
+                                    TextColor="#000000"
                                     FontSize="Medium"></Label>
                             </StackLayout>
                         </ViewCell>

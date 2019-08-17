@@ -3,14 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLineaWeb.Views.TransferenciaPage"
              Title="Transferencias"
-             Icon=""
-             BackgroundColor="#1C1C1C">
+             Icon="PaymentsWhite.xml"
+             BackgroundColor="#FFFFFF">
     <ContentPage.Content>
         <StackLayout Padding="30" >
             <Label 
                 Text="Transferencias" 
 				HorizontalOptions="Center" 
-				TextColor="#FFFFFF"
+				TextColor="#000000"
                 VerticalOptions="StartAndExpand"
 				FontSize="Large"
 				TextDecorations="Underline"
@@ -21,8 +21,8 @@
             <Picker 
                 Title="Seleccione la cuenta origen."
                 x:Name="Pkr_CuentaOrigen"
-                TextColor="#FFFFFF"
-                TitleColor="#FFFFFF"
+                TextColor="#000000"
+                TitleColor="#000000"
                 VerticalOptions="Center"
 				HorizontalOptions="Fill"
                 FontSize="Medium">
@@ -31,8 +31,8 @@
             <Picker 
                 Title="Seleccione la cuenta destino."
                 x:Name="Pkr_CuentaDestino"
-                TextColor="#FFFFFF"
-                TitleColor="#FFFFFF"
+                TextColor="#000000"
+                TitleColor="#000000"
                 VerticalOptions="Center"
 				HorizontalOptions="Fill"
                 
@@ -42,8 +42,8 @@
             <Entry
                 x:Name="Txt_Descripcion"
                 Placeholder="Ingrese una descripción"
-                TextColor="#FFFFFF"
-                PlaceholderColor="#FFFFFF"
+                TextColor="#000000"
+                PlaceholderColor="#000000"
                 VerticalOptions="Center"
                 HorizontalTextAlignment="Start"
                 HorizontalOptions="Fill"
@@ -51,8 +51,8 @@
             </Entry>
             <Picker
                 Title="Seleccione un estado"
-                TextColor="#FFFFFF"
-                TitleColor="#FFFFFF"
+                TextColor="#000000"
+                TitleColor="#000000"
                 VerticalOptions="Center"
                 x:Name="Pkr_Estado"
                 HorizontalOptions="Fill"

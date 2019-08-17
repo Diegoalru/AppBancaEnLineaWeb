@@ -12,7 +12,7 @@ namespace AppBancaEnLineaWeb.Utils
     {
         private ServiciosManager serviciosManager = new ServiciosManager();
 
-        public async List<Servicio> GetServicios()
+        /*public async List<Servicio> GetServicios()
         {
             List<Servicio> ListaServicios = null;
             IEnumerable<Servicio> IServicios = await serviciosManager.ObtenerServicios();
@@ -22,5 +22,6 @@ namespace AppBancaEnLineaWeb.Utils
             }
             return ListaServicios;
         }
+        */
     }
 }

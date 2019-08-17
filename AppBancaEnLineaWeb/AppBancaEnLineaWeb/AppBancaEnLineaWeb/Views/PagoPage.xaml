@@ -2,30 +2,32 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBancaEnLineaWeb.Views.PagoPage"
-             BackgroundColor="#1C1C1C">
+             BackgroundColor="#FFFFFF"
+             Title="Pago Servicios"
+             Icon="PaymentsWhite.xml">
     <ContentPage.Content>
         <StackLayout Padding="30">
             <Label Text="Pago de Servicios" 
 				HorizontalOptions="Center" 
                 VerticalOptions="StartAndExpand"
-				TextColor="#FFFFFF" 
+				TextColor="#000000" 
 				FontSize="26"
 				FontAttributes="Bold" Margin="0,10,0,0">
             </Label>
             <Picker x:Name="Pkr_Servicios"
                     Title="Seleccione un servicio"
                     FontSize="16"
-                    TextColor="#FFFFFF" 
+                    TextColor="#000000" 
                     VerticalOptions="Center"
-                    TitleColor="#FFFFFF"
+                    TitleColor="#000000"
                     ItemDisplayBinding="{Binding SER_DESCRIPCION}"
                     Margin="10">
             </Picker>
             <Picker x:Name="Pkr_Cuentas"
                     Title="Seleccione una cuenta"
                     FontSize="16"
-                    TextColor="#FFFFFF" 
-                    TitleColor="#FFFFFF"
+                    TextColor="#000000" 
+                    TitleColor="#000000"
                     VerticalOptions="Center"
                     ItemDisplayBinding="{Binding CUE_DESCRIPCION_label}"
                     Margin="10">
@@ -33,8 +35,8 @@
             <Entry  
                 x:Name="Txt_Monto"
                 Placeholder="Ingrese el monto"
-                TextColor="#FFFFFF" 
-                PlaceholderColor="#FFFFFF"
+                TextColor="#000000" 
+                PlaceholderColor="#000000"
                 VerticalOptions="Center"
                 HorizontalOptions="Fill"
                 Keyboard="Telephone"
@@ -44,7 +46,7 @@
             <Label
                 x:Name="Lbl_Date"
                 HorizontalOptions="Fill"
-                TextColor="#FFFFFF" 
+                TextColor="#000000" 
                 HorizontalTextAlignment="Center"
                 VerticalOptions="Center"
                 FontSize="16"
@@ -54,10 +56,10 @@
             <Button 
                 x:Name="Btn_Pagar"
                 Text="Pagar"
-                TextColor="White"
+                TextColor="#000000"
                 CornerRadius="30"
                 VerticalOptions="EndAndExpand"
-                BackgroundColor="#606060"
+                BackgroundColor="#EA8B3C"
 				Margin="30, 0"
                 Clicked="Btn_Pagar_Clicked">
             </Button>
