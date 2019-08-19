@@ -1,50 +1,105 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="AppBancaEnLineaWeb.LoginPage" 
-             BackgroundImage="JCH.jpg" >
+             xmlns:local="clr-namespace:AppBancaEnLineaWeb"
+             xmlns:Controls="clr-namespace:AppBancaEnLineaWeb.Controls"
+             x:Class="AppBancaEnLineaWeb.LoginPage"
+             BackgroundColor="#3D2E55"
+             xmlns:UserControlers="clr-namespace:AppBancaEnLineaWeb.UserControls;assembly=AppBancaEnLineaWeb">
     <ContentPage.Content >
         <ScrollView>
             <StackLayout Orientation="Vertical" 
                          HorizontalOptions="Fill" 
-                         VerticalOptions="Center" 
                          Padding="50" AnchorY="50">
-                <Label Text="Bienvenido a Banco ULACIT" 
-					   Margin="0, -50, 0, 50"
-                       HorizontalTextAlignment="Center"
-                       HorizontalOptions="Center"
-					   TextColor="White" 
-					   FontSize="25" 
-					   FontAttributes="Bold" ></Label>
-                <Entry x:Name="Txt_Username" 
-					   HorizontalTextAlignment="Center"
-                       Placeholder="Usuario"
-                       HorizontalOptions="Fill"
-					   PlaceholderColor="#CFC9C9"
-					   TextColor="#C5C2C2" ></Entry>
-                <Entry x:Name="Txt_Password" 
-                       IsPassword="True"
-					   HorizontalTextAlignment="Center"
-                       Placeholder="Contraseña" 
-					   Margin="0, 0, 0, 25"
-                       HorizontalOptions="Fill"
-					   PlaceholderColor="#CFC9C9"
-					   TextColor="#C5C2C2" ></Entry>
-                <Button x:Name="Btn_Login" 
-                        Text="Iniciar Sesion" 
-						Margin="30, 0"
-                        BorderColor="#252525" 
-						BackgroundColor="#FFFFFF" 
-                        TextColor="Green"
-						CornerRadius="40" 
-                        Clicked="Btn_Login_Clicked" FontAttributes="Bold"></Button>
-                <Button x:Name="Btn_Register" 
-                        Text="¿No tiene una Cuenta?" 
-                        TextColor="White"
-						BorderColor="Transparent"
-						BackgroundColor="Transparent"
-                        CornerRadius="10" 
-                        Clicked="Btn_Register_Clicked" FontAttributes="Bold"></Button>
+                <Grid Padding="5">
+                    <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Image x:Name="LogoUlacit" 
+                           HorizontalOptions="Center" 
+                           Source="UlacitLogo.png"
+                           WidthRequest="130"
+                           VerticalOptions="Start"
+                           Grid.Row="0"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3" 
+                           ></Image>
+                    <Label Text="Banco ULACIT" 
+				           Margin="0, 10, 0, 50"
+                           HorizontalTextAlignment="Center"
+                           HorizontalOptions="Center"
+					       TextColor="White" 
+		        	       FontSize="25" 
+			    	       FontAttributes="Bold" 
+                           Grid.Row="1"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"></Label>
+                    <Image Source="LoginWhite.xml" 
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           HorizontalOptions="Start"></Image>
+                    <Entry x:Name="Txt_Username" 
+                           Grid.Row="2"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           Placeholder="Usuario"
+					       PlaceholderColor="#FFFFFF"
+                           Text="#FFFFFF"
+                           HorizontalTextAlignment="Center"
+					       TextColor="#C5C2C2" 
+                           Margin="0,0,0,0"></Entry>
+                    <Image Source="LockWhite.xml" 
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           HorizontalOptions="Start"></Image>
+                    <Entry x:Name="Txt_Password"
+                           Grid.Row="3"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           IsPassword="True"
+                           Placeholder="Contraseña"
+					       Margin="0, 0, 0, 0"
+                           PlaceholderColor="#FFFFFF"
+                           Text="#FFFFFF"
+                           HorizontalTextAlignment="Center"
+					       TextColor="#C5C2C2" ></Entry>
+                    <Button x:Name="Btn_Login" 
+                           Grid.Row="4"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           Text="Iniciar Sesion" 
+						   Margin="0, 25, 0, 0"
+                           BorderColor="#252525" 
+        				   BackgroundColor="#EA8B3C" 
+                           TextColor="#000000"
+						   CornerRadius="30" 
+                           Clicked="Btn_Login_Clicked" FontAttributes="Bold"
+                           FontFamily="FontAwesome.ot#FontAwesome">
+                    </Button>
+                    <!--
+                    <Button x:Name="Btn_Register" 
+                           Grid.Row="5"
+                           Grid.Column="1"
+                           Grid.ColumnSpan="3"
+                           Text="¿No tiene una Cuenta?" 
+                           TextColor="White"
+						   BorderColor="Transparent"
+						   BackgroundColor="Transparent"
+                           CornerRadius="10" 
+                           Clicked="Btn_Register_Clicked" 
+                           FontAttributes="Bold"></Button>-->
                 <!--<Button x:Name="Btn_Agregar" 
                         Text="Agregar Usuario" 
                         BorderColor="Navy" 
@@ -52,6 +107,7 @@
                         TextColor="Silver"
                         CornerRadius="10" 
                         Clicked="Btn_Agregar_Clicked"></Button>-->
+                </Grid>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -34,7 +34,6 @@ namespace AppBancaEnLineaWeb.Views
         public void CargaUser()
         {
             string user = App.usuarioActual.USU_USERNAME;
-            Lbl_Username.Text = "Usuario: " + user;
         }
 
         /// <summary>
@@ -124,27 +123,7 @@ namespace AppBancaEnLineaWeb.Views
         [Obsolete("Este metodo no se usa por falta del botón en el MainPage.", false)]
         private void Btn_RefrescarPantalla(object sender, EventArgs e)
         {
-        }
-
-        /// <summary>
-        /// Cierra la sesión actual.
-        /// </summary>
-        public async void CerrarSesionTapped(object sender, EventArgs e)
-        {
-            try
-            {
-                bool respuesta = await DisplayAlert("Cerrar Sesión", "¿Desea cerrar la sesión?", "Aceptar", "Cancelar");
-                if (respuesta)
-                {
-                    Application.Current.MainPage = new LoginPage();
-                    App.usuarioActual = null;
-                }
-                else { /* No hacer codigo aqui. */ }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error: " + ex.Message);
-            }
+            CargarCuentas();
         }
         #endregion
 

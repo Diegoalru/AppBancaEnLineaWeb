@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="AppBancaEnLineaWeb.Views.MainTabbedPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            xmlns:local="clr-namespace:AppBancaEnLineaWeb.Views"
+            BarBackgroundColor="#3D2E55"
+            BarTextColor="White"
+            SelectedTabColor="White"
+            UnselectedTabColor="White">
+
+    <local:MainPage></local:MainPage>
+    <local:PagoPage></local:PagoPage>
+    <local:PagoPageList>
+    </local:PagoPageList>
+    <local:TransferenciaPage></local:TransferenciaPage>
+    <local:UsuarioPage></local:UsuarioPage>
+
+    <!--
+    1- Informacion Usuario PONER LO DE CERRAR SESION
+    2- Main page QUITAR CERRAR SESION!!
+    3- pagar servicios
+    4- ver serviciosa
+    5- hacer transferencias y lista que se abra con un boton en esa pagina. CREARLA!!
+    -->
+
+    
+    <!--
+        Para los iconos:
+        https://material.io/resources/icons/?style=round
+    -->
+
+</TabbedPage>

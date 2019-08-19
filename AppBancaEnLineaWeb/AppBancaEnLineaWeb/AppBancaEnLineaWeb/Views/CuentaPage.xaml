@@ -1,36 +1,54 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppBancaEnLineaWeb.Views.CuentaPage">
+             x:Class="AppBancaEnLineaWeb.Views.CuentaPage"
+             Title="Cuenta"
+             Icon="PaymentsWhite.xml"
+             BackgroundColor="#FFFFFF">
     <ContentPage.Content>
-        <StackLayout Padding="30" VerticalOptions="Center">
+        <StackLayout Padding="30" >
             <Label Text="Cuenta Bancaria" 
-				HorizontalOptions="Center" 
+				HorizontalOptions="Center"
+                VerticalOptions="StartAndExpand"
 				TextColor="#000000" 
 				FontSize="26"
-				TextDecorations="Underline"
-				FontAttributes="Bold" Margin="40">
+				FontAttributes="Bold"
+                Margin="0,20,0,0">
             </Label>
             <Entry x:Name="Txt_Codigo"
                    Placeholder="Ingrese el código"
                    HorizontalTextAlignment="Center"
+                   VerticalOptions="Center"
+                   TextColor="#000000"
                    HorizontalOptions="Fill"
-                   FontSize="Small"></Entry>
+                   FontSize="Medium">
+            </Entry>
             <Entry x:Name="Txt_Descripcion"
                    Placeholder="Ingrese la descripción"
-                   HorizontalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   TextColor="#000000"
+                   PlaceholderColor="#000000"
                    HorizontalOptions="Fill"
-                   FontSize="Small"></Entry>
+                   FontSize="Medium">
+            </Entry>
             <Entry x:Name="Txt_Saldo"
                    Placeholder="Ingrese el saldo"
-                   HorizontalTextAlignment="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalOptions="Center"
+                   Keyboard="Numeric"
+                   TextColor="#000000"
+                   PlaceholderColor="#000000"
                    HorizontalOptions="Fill"
-                   FontSize="Small">
+                   FontSize="Medium">
             </Entry>
             <Picker Title="Seleccione un tipo de moneda"
                     x:Name="Pkr_Moneda"
 					HorizontalOptions="Fill"
-                    FontSize="Small">
+                    TitleColor="#000000"
+                    VerticalOptions="Center"
+                    TextColor="#000000"
+                    FontSize="Medium">
                 <Picker.Items>
                     <x:String>DOLARES</x:String>
                     <x:String>COLONES</x:String>
@@ -39,8 +57,11 @@
             </Picker>
             <Picker Title="Seleccione un estado"
                     x:Name="Pkr_Estado"
-                    FontSize="Small"
-					Margin="0, 0, 0, 50"
+                    FontSize="Medium"
+                    TitleColor="#000000"
+                    VerticalOptions="Center"
+                    TextColor="#000000"
+					Margin="0, 0, 0, 0"
 					>
                 <Picker.Items>
                     <x:String>Activo</x:String>
@@ -49,23 +70,28 @@
             </Picker>
             <Button x:Name="Btn_Agregar"
                     Text="Agregar"
-                    TextColor="White"
 					Margin="10, 0"
 					CornerRadius="30"
-                    BackgroundColor="Black"
+                    FontSize="Medium"
+                    VerticalOptions="EndAndExpand"
+                    TextColor="#FFFFFF"
+                    BackgroundColor="Green"
                     Clicked="AgregarTapped"></Button>
             <Button x:Name="Btn_Modificar"
                     Text="Modificar"
-                    TextColor="White"
+                    TextColor="#FFFFFF"
 					CornerRadius="30"
+                    VerticalOptions="End"
 					Margin="10, 0"
-                    BackgroundColor="Black"
+                    BackgroundColor="#606060"
                     Clicked="ActualizarTapped"></Button>
             <Button Text="Regresar"
-                    TextColor="White"
+                    TextColor="#FFFFFF"
+                    VerticalOptions="End"
 					CornerRadius="30"
+                    FontSize="Medium"
 					Margin="10, 0"
-                    BackgroundColor="Teal"
+                    BackgroundColor="#CD0101"
                     Clicked="RegresarTapped"></Button>
         </StackLayout>
     </ContentPage.Content>

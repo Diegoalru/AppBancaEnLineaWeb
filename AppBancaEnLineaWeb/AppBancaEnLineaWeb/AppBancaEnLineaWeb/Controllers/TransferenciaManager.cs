@@ -42,10 +42,10 @@ namespace AppBancaEnLineaWeb.Controllers
         /// </summary>
         /// <param name="userCod">Codigo del usuario actual.</param>
         /// <returns>Devuele una lista de las cuentas del usuario.</returns>
-        public async Task<IEnumerable<Transferencia>> ObtenerTransferencias(string userCod)
+        public async Task<IEnumerable<Transferencia>> ObtenerTransferencias()
         {
             HttpClient cliente = Usuario.ObtenerCliente();
-            var uri = new Uri(string.Format(Url + userCod));
+            var uri = new Uri(string.Format(Url));
             string respuesta = await cliente.GetStringAsync(uri);
             return JsonConvert.DeserializeObject<IEnumerable<Transferencia>>(respuesta);
         }

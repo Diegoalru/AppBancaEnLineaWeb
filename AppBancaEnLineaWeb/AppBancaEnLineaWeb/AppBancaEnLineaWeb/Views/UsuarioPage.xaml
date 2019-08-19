@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLineaWeb.Views.UsuarioPage"
+             Title="Usuario"
+             Icon="LoginWhite.xml"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <StackLayout Padding="30">
+            <Label Text="Informacion" 
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   TextColor="#000000" 
+                   FontSize="26"
+                   FontAttributes="Bold" 
+                   Margin="0,30,0,0">
+            </Label>
+            <Label Text="Usuario"
+                   x:Name="Lbl_Usuario"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#000000"
+                   Margin="0,10,0,10"
+                   FontSize="Medium">
+            </Label>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#000000"/>
+            <Label x:Name="Lbl_Nombre"
+                   Text="Nombre"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#000000"
+                   Margin="0,10,0,10"
+                   FontSize="Medium">
+            </Label>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#000000"/>
+            <Label x:Name="Lbl_Cedula"
+                   Text="Cedula"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   TextColor="#000000"
+                   Margin="0,10,0,10"
+                   FontSize="Medium">
+            </Label>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#000000"/>
+            <Label x:Name="Lbl_Correo"
+                   Text="Correo"
+                   HorizontalOptions="Center"
+                   TextColor="#000000"
+                   Margin="0,10,0,10"
+                   FontSize="Medium">
+            </Label>
+            <BoxView HorizontalOptions="FillAndExpand" HeightRequest="1" Color="#000000" Margin="5"/>
+            <Label
+                x:Name="Lbl_Date"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center"
+                VerticalOptions="Center"
+                TextColor="#000000"
+                FontSize="Medium"
+                Margin="0,0,0,40"
+                Text="Fecha: ">
+            </Label>
+            <Button Grid.Column="0" 
+                    Text="CERRAR SESIÓN"
+                    TextColor="White"
+                    BackgroundColor="DarkRed"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="EndAndExpand"
+                    CornerRadius="30"
+                    Clicked="CerrarSesionTapped"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
+
+
+
+      

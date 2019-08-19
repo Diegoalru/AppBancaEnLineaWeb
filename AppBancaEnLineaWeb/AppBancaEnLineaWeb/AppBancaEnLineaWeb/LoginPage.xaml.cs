@@ -30,13 +30,16 @@ namespace AppBancaEnLineaWeb
 
             Txt_Username.Text = "jperez";
             Txt_Password.Text = "123456";
+
         }
         #endregion
 
         #region Metodos
-        /* FIXME:
-         * Inicio de sesión.
-         */
+        private void CargaImage()
+        {
+
+        }
+        
         /// <summary>
         /// Inicio de sesión.
         /// </summary>
@@ -69,7 +72,7 @@ namespace AppBancaEnLineaWeb
                         {
                             var jwthandler = new System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler();
                             App.usuarioActual.Token = jwthandler.ReadToken(App.usuarioActual.TOKEN);
-                            Application.Current.MainPage = new MainPage();
+                            Application.Current.MainPage = new MainTabbedPage();
                         }
                         else
                         {
@@ -124,7 +127,9 @@ namespace AppBancaEnLineaWeb
         [Obsolete("No usar hasta no obtener la URL del API para crear usuarios", true)]
         private void Btn_Register_Clicked(object sender, EventArgs e)
         {
-
+            /*
+             * CODE
+             */
         }
         #endregion
     }

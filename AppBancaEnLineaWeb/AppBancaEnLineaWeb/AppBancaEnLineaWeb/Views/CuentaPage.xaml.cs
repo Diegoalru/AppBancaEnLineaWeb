@@ -81,8 +81,9 @@ namespace AppBancaEnLineaWeb.Views
         /// </summary>
         private void RegresarTapped(Object sender, System.EventArgs e)
         {
-            Application.Current.MainPage = new MainPage();
+            Application.Current.MainPage = new MainTabbedPage();
         }
+
 
         /// <summary>
         /// Actualizar una cuenta.

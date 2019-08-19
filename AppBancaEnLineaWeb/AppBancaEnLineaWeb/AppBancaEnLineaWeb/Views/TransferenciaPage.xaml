@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLineaWeb.Views.TransferenciaPage"
+             Title="Transferencias"
+             Icon="TransferLogoWhite.xml"
+             BackgroundColor="#FFFFFF">
+    <ContentPage.Content>
+        <StackLayout Padding="30" >
+            <Label 
+                Text="Transferencias" 
+				HorizontalOptions="Center" 
+				TextColor="#000000"
+                VerticalOptions="StartAndExpand"
+				FontSize="Large"
+				FontAttributes="Bold" 
+                Margin="0,10,0,0">
+            </Label>
+            <!--MAIN-->
+            <Picker 
+                Title="Seleccione la cuenta origen."
+                x:Name="Pkr_CuentaOrigen"
+                TextColor="#000000"
+                TitleColor="#000000"
+                VerticalOptions="Center"
+				HorizontalOptions="Fill"
+                FontSize="Medium">
+                <!-- Datos cargados desde C# -->
+            </Picker>
+            <Picker 
+                Title="Seleccione la cuenta destino."
+                x:Name="Pkr_CuentaDestino"
+                TextColor="#000000"
+                TitleColor="#000000"
+                VerticalOptions="Center"
+				HorizontalOptions="Fill"
+                
+                FontSize="Medium">
+                <!-- Datos cargados desde C# -->
+            </Picker>
+            <Entry
+                x:Name="Txt_Descripcion"
+                Placeholder="Ingrese una descripción"
+                TextColor="#000000"
+                PlaceholderColor="#000000"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Start"
+                HorizontalOptions="Fill"
+                FontSize="Medium">
+            </Entry>
+            <Entry  
+                x:Name="Txt_Monto"
+                Placeholder="Ingrese el monto"
+                TextColor="#000000"
+                PlaceholderColor="#000000"
+                VerticalOptions="Center"
+                HorizontalTextAlignment="Start"
+                HorizontalOptions="Fill"
+                FontSize="Medium"
+				>
+            </Entry>
+            <Picker
+                Title="Seleccione un estado"
+                TextColor="#000000"
+                TitleColor="#000000"
+                VerticalOptions="Center"
+                x:Name="Pkr_Estado"
+                HorizontalOptions="Fill"
+                FontSize="Medium">
+                <Picker.Items>
+                    <x:String>Activo</x:String>
+                    <x:String>Inactivo</x:String>
+                </Picker.Items>
+            </Picker>
+            <Label
+                x:Name="Lbl_SaldoDisponible"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                Text="Prueba"
+                FontSize="Medium">
+            </Label>
+            <Entry 
+                x:Name="Txt_Saldo"
+                Placeholder="Monto"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"
+                FontSize="Medium">
+            </Entry>
+            <Label
+                x:Name="Lbl_Date"
+                HorizontalOptions="Fill"
+                HorizontalTextAlignment="Center"
+                FontSize="Medium"
+                TextColor="#000000"
+				Margin="0,0,0,40"
+                Text="Fecha: ">
+            </Label>
+            <!--END MAIN-->
+            <!--BOTONES-->
+            <Button
+                Text="Transferir"
+                Clicked="CrearTranferencia"
+                TextColor="#000000"
+                FontSize="Large"
+                BackgroundColor="Green"  
+                CornerRadius="100"
+				HorizontalOptions="Center"                    
+                Padding="10"
+                Margin="0, 10, 0, 5">
+            </Button>
+            <Button
+                Text="Ver Lista de Transferencias"
+                Clicked="Btn_ListaTransferencias">
+            </Button>
+            <!--BOTONES-->
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

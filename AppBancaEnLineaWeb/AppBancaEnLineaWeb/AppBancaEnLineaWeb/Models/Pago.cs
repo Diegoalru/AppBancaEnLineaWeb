@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AppBancaEnLineaWeb.Models
 {
@@ -13,15 +11,22 @@ namespace AppBancaEnLineaWeb.Models
         public DateTime PAG_FECHA { get; set; }
         public string PAG_MONEDA { get; set; }
         public decimal PAG_MONTO { get; set; }
-        /// <summary>
-        /// ¡No usar! Falta la logica de la variable.
-        /// </summary>
-        /// <see cref="https://github.com/Diegoalru/AppBancaEnLinea/blob/master/AppBancaEnLinea/AppBancaEnLinea/Models/Pago.cs"/>
-        public string PAG_DESCRIPCION_label { get; }
+        public string PAG_DESCRIPCION_label
+        {
+            get
+            {
+                return string.Format("Pago #{0} | Cuenta: {1} | Monto: {2:N2} | Fecha: {3}",
+                    PAG_CODIGO
+                    ,CUE_CODIGO
+                    , PAG_MONTO
+                    , PAG_FECHA.ToString("dd/MM/yyyy  hh:mm"));
+            }
+        }
         #endregion
 
         #region Constructor
-        public Pago(){}
+        public Pago()
+        { }
         #endregion
     }
 }

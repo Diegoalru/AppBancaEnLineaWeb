@@ -1,91 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="AppBancaEnLineaWeb.Views.MainPage">
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppBancaEnLineaWeb.Views.MainPage"
+             Title="MainPage"
+             BackgroundColor="#FFFFFF"
+             Icon="MainPageWhite.xml">
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" Padding="30">
-            <Label x:Name="Lbl_Username" Text="" HorizontalOptions="End"></Label>
-            <Grid VerticalOptions="Center">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Button Grid.Column="0"
-                        x:Name="Btn_PagarServicio"
-					    Text="Pagar Servicios"
-                        TextColor="White"
-                        BackgroundColor="DarkBlue"
-                        CornerRadius="50"
-                        HorizontalOptions="Fill"
-                        Clicked="Btn_PagarServicio_Clicked"/>
-                <Button Grid.Column="1"
-                        x:Name="Btn_PagoList"
-					    Text="Lista de Pagos"
-                        TextColor="White"
-                        BackgroundColor="DarkBlue"
-                        CornerRadius="50"
-                        HorizontalOptions="Fill"
-                        Clicked="Btn_PagoList_Clicked"/>
-            </Grid>
-            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20">
+            <Label 
+                Text="Cuentas" 
+				HorizontalOptions="Center" 
+                VerticalOptions="StartAndExpand"
+				TextColor="#000000" 
+				FontSize="26"
+				FontAttributes="Bold" Margin="0,20,0,0"/>
+            <ListView x:Name="CuentasList" BackgroundColor="White" Grid.Row="4" SeparatorVisibility="Default" Margin="0, 20" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <ViewCell Height="30">
-                            <StackLayout Padding="5">
-                                <Label Text="{Binding CUE_DESCRIPCION_label}"></Label>
+                        <ViewCell >
+                            <StackLayout Padding="5" VerticalOptions="Fill">
+                                <Label Text="{Binding CUE_DESCRIPCION_label}" TextColor="#000000"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Grid VerticalOptions="Center" >
+            <Grid VerticalOptions="End" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="AUTO"  />
                 </Grid.RowDefinitions>
                 <Button Grid.Column="0"                     
-                    Image="anadir.png"
-						Padding="15"
-                    BackgroundColor="White"
+                    Image="outline_add_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF"
                     HorizontalOptions="Start"
                     CornerRadius="50"
-					Margin="15, 0"
+					Margin="0,0,0,0"
+                    VerticalOptions="End"
                     Clicked="AgregarTapped"/>
                 <Button Grid.Column="1" 
-					Image="modificar.png"
-						Padding="15"
-                    BackgroundColor="White"
+					Image="ConfigureBlack.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF"
                     HorizontalOptions="Center"
-					Margin="15, 0"
+                    FontSize="Small"
+					Margin="0,0,0,0"
 					CornerRadius="50"
+                    VerticalOptions="End"
                     Clicked="ModificarTapped"/>
                 <Button Grid.Column="2"                     
-                    Image="eliminar.png"
-						Padding="15"
+                    Image="outline_delete_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
 					FontAttributes="Bold"
-                    BackgroundColor="White"
+				    BackgroundColor="#FFFFFF"
                     CornerRadius="50"
-					Margin="12, 0"
+					Margin="0,0,0,0"
+                    VerticalOptions="End"
                     HorizontalOptions="End"
                     Clicked="EliminarTapped"/>
                 <Button Grid.Column="3" 
-					Image="transferencia.png"
-					Padding="15"
-                    BackgroundColor="White"  
+					Image="outline_restore_24.xml"
+				    WidthRequest ="40"
+					HeightRequest ="40"
+				    BackgroundColor="#FFFFFF" 
                     CornerRadius="50"
 					HorizontalOptions="End"
+                    VerticalOptions="End"
                     Clicked="Btn_RefrescarPantalla"
-                    Margin="15, 0"/>
-
-            </Grid>
-            <Grid VerticalOptions="Fill" Margin="-100, 10" Padding="0, 10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Button Grid.Column="0" 
-					Text="CERRAR SESIÓN"
-                    TextColor="White"
-                    BackgroundColor="DarkRed"
-                    HorizontalOptions="FillAndExpand"
-                    CornerRadius="30"
-                    Clicked="CerrarSesionTapped"/>
+                    Margin="0,0,0,0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

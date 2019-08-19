@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace AppBancaEnLineaWeb.Droid
 {
-    [Activity(Label = "AppBancaEnLineaWeb", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Banco ULACIT", Icon = "@mipmap/ic_launcher", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -21,5 +21,11 @@ namespace AppBancaEnLineaWeb.Droid
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
+
+        public override void OnBackPressed()
+        {
+            //Toast.MakeText(this, "Back Button Pressed Detected", ToastLength.Show());
+        }
     }
+    
 }
