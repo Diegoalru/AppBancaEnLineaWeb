@@ -23,13 +23,14 @@ namespace AppBancaEnLineaWeb
         {
             InitializeComponent();
 
-            //Día de la presentación descomentar
+            Txt_Username.Text = string.Empty;
+            Txt_Password.Text = string.Empty;
 
-            //Txt_Username.Text = string.Empty;
-            //Txt_Password.Text = string.Empty;
-
-            Txt_Username.Text = "jperez";
-            Txt_Password.Text = "123456";
+            /*
+             * Credenciales Predeterminados.
+             * Txt_Username.Text = "jperez";
+             * Txt_Password.Text = "123456";
+             */
 
         }
         #endregion
@@ -39,7 +40,7 @@ namespace AppBancaEnLineaWeb
         {
 
         }
-        
+
         /// <summary>
         /// Inicio de sesión.
         /// </summary>
